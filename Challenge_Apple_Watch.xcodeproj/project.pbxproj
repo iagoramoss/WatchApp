@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		677072262919902F009571D7 /* MoveDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677072252919902F009571D7 /* MoveDetection.swift */; };
 		86B47AB029197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */; };
 		86B47AB729197D0A0095B1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB629197D0A0095B1FA /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		677072252919902F009571D7 /* MoveDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetection.swift; sourceTree = "<group>"; };
 		86B47AA929197D0A0095B1FA /* Challenge_Apple_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Apple_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge_Apple_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Apple_WatchApp.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		677072242919900C009571D7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				677072252919902F009571D7 /* MoveDetection.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		86B47AA229197D0A0095B1FA = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		86B47AB329197D0A0095B1FA /* Challenge_Apple_Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				677072242919900C009571D7 /* Resources */,
 				86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */,
 				86B47AB629197D0A0095B1FA /* ContentView.swift */,
 				86B47AB829197D0B0095B1FA /* Assets.xcassets */,
@@ -192,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677072262919902F009571D7 /* MoveDetection.swift in Sources */,
 				86B47AB729197D0A0095B1FA /* ContentView.swift in Sources */,
 				86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */,
 			);
@@ -325,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Challenge_Apple_Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = A7SRF7ZP35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
@@ -335,7 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dessana.Challenge-Apple-Watch.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "iago.Challenge-Apple-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -354,6 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Challenge_Apple_Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = A7SRF7ZP35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
@@ -364,7 +378,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dessana.Challenge-Apple-Watch.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "iago.Challenge-Apple-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -382,9 +396,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A7SRF7ZP35;
 				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dessana.Challenge-Apple-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "iago.Challenge-Apple-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -397,9 +412,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A7SRF7ZP35;
 				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dessana.Challenge-Apple-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "iago.Challenge-Apple-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
