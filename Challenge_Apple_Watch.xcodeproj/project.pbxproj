@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		86B47AB029197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */; };
-		86B47AB729197D0A0095B1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB629197D0A0095B1FA /* ContentView.swift */; };
+		86B47AB729197D0A0095B1FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB629197D0A0095B1FA /* HomeView.swift */; };
 		86B47AB929197D0B0095B1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47AB829197D0B0095B1FA /* Assets.xcassets */; };
 		86B47ABC29197D0B0095B1FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -42,7 +42,7 @@
 		86B47AA929197D0A0095B1FA /* Challenge_Apple_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Apple_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge_Apple_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Apple_WatchApp.swift; sourceTree = "<group>"; };
-		86B47AB629197D0A0095B1FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86B47AB629197D0A0095B1FA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		86B47AB829197D0B0095B1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */,
-				86B47AB629197D0A0095B1FA /* ContentView.swift */,
+				86B47AB629197D0A0095B1FA /* HomeView.swift */,
 				86B47AB829197D0B0095B1FA /* Assets.xcassets */,
 				86B47ABA29197D0B0095B1FA /* Preview Content */,
 			);
@@ -192,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86B47AB729197D0A0095B1FA /* ContentView.swift in Sources */,
+				86B47AB729197D0A0095B1FA /* HomeView.swift in Sources */,
 				86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
