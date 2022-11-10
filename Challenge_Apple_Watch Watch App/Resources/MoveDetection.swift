@@ -50,6 +50,13 @@ class MoveDetection: ObservableObject{
     @Published var pitch = 0.0
     @Published var yaw = 0.0
     @Published var roll = 0.0
+//    var dateComps = Calendar.current.dateComponents([.second], from: Date())
+    var count = 0
+    
+    var timer: Timer?
+//    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+//        @State private var counter = 0
+
     
     private var initialYaw: Double?
     private var finalYaw: Double?
@@ -62,10 +69,10 @@ class MoveDetection: ObservableObject{
     
     // Quando inicia, um timer de 5 segundos é ativado pra dar um stop no device motion
     func startUpdate() {
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.stopUpdate), userInfo: nil, repeats: false)
-        
-        if(motionManager.isDeviceMotionAvailable){
-            motionManager.startDeviceMotionUpdates(to: motionQueue) { (data: CMDeviceMotion?, error: Error?) in
+//
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            if(self.motionManager.isDeviceMotionAvailable){
+                self.motionManager.startDeviceMotionUpdates(to: self.motionQueue) { (data: CMDeviceMotion?, error: Error?) in
                 guard let data = data else {
                     print("Error: \(error!)")
                     return
@@ -85,11 +92,31 @@ class MoveDetection: ObservableObject{
                         self.initialRoll = self.pitch
                     }
                     
+//
+                    
 //                    print("=============================")
 //                    print("Pitch: \(self.pitch)\nYaw: \(self.yaw)\nRoll: \(self.roll)")
 //                    print("=============================")
                 }
             }
+        }
+        
+       
+//                        let randomNumber = Int.random(in: 1...20)
+            print("Number: \(self.count)")
+//            print("Yaw value: \(self.yaw)")
+            
+            self.count += 1
+            
+            
+            if self.count < 5 && (self.yaw > 0.0 && self.roll > 0.0 && self.pitch < 0.0) {
+       
+                print("coma devagar")
+            } else if self.count == 10 {
+                
+                self.count = 0
+            }
+          
         }
     }
     
@@ -107,6 +134,15 @@ class MoveDetection: ObservableObject{
             print("Initial Roll: \(self.initialRoll ?? 0.0)\nFinal Roll: \(self.finalRoll ?? 0.0)")
             print("Initial Pitch: \(self.initialPitch ?? 0.0)\nFinal Pitch: \(self.finalPitch ?? 0.0)")
             print("=============================")
+            
+            timer!.invalidate()
+            self.count = 0
+            
+//            while dateComps.second! < 5 {
+//                print(dateComps.second!)
+//
+//                print("hello world")
+//            }
             
             self.initialYaw = nil
             self.finalYaw = nil

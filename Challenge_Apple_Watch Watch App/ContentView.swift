@@ -11,8 +11,13 @@ struct ContentView: View {
     @State private var log = false
     @StateObject var moveDetection = MoveDetection()
     
+    
+    
     var body: some View {
         VStack {
+            
+            
+            
             Button(action: {
                 self.log.toggle()
                 
@@ -23,6 +28,23 @@ struct ContentView: View {
                     self.moveDetection.stopUpdate()
                     
                 }
+                
+            
+                
+//                if dateComps.second! == 1 {
+//
+//
+//                }
+                
+//                if moveDetection.yaw > 0.0 && moveDetection.roll > 0.0  {
+//
+//                    print("Fim: boca")
+//                }
+//                if moveDetection.yaw < 0.0 && moveDetection.roll < 0.0 {
+//
+//                    print("Inicio - mesa -> boca")
+//                }
+                
             }) {
                 if self.log {
                     Image(systemName: "pause.circle")
@@ -34,13 +56,15 @@ struct ContentView: View {
             
             VStack {
                 VStack {
+                   
+                  
                     Text("Device Motion").font(.headline)
                     HStack {
-                        Text(String(format: "%.2f", self.moveDetection.yaw))
+                        Text("Yaw: \(String(format: "%.2f", self.moveDetection.yaw))")
                         Spacer()
-                        Text(String(format: "%.2f", self.moveDetection.roll))
+                        Text("Roll: \(String(format: "%.2f", self.moveDetection.roll))")
                         Spacer()
-                        Text(String(format: "%.2f", self.moveDetection.pitch))
+                        Text("pitch: \(String(format: "%.2f", self.moveDetection.pitch))")
                     }.padding(.horizontal)
                 }
             }
