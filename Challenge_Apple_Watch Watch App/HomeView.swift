@@ -18,12 +18,12 @@ struct HomeView: View {
                             Image("Lunch")
                             .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.16)
                                 .padding(.top, 7)
-                                .padding(.bottom, 8)
-                                .padding(.leading, 8)
+                                .padding([.bottom, .leading], 8)
                             
                             Text("Iniciar refeição")
                                 .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.05, alignment: .leading)
                                 .font(.system(size: 16.0))
+                                .fontWeight(.bold)
                                 .padding(.leading, 7)
                                 .padding(.trailing, 8)
                                 .padding(.bottom, 4)
@@ -32,38 +32,40 @@ struct HomeView: View {
                                 .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.05, alignment: .leading)
                                 .font(.system(size: 14.0))
                                 .foregroundColor(.accentColor)
-                                .padding(.leading, 7)
-                                .padding(.bottom, 7)
+                                .padding([.leading, .bottom], 7)
                     }
                 }).frame(width: geometry.size.width, height: 85, alignment: .leading)
-                    .buttonBorderShape(.roundedRectangle(radius: 20.0))
+                    .buttonBorderShape(.roundedRectangle(radius: 16.0))
+                    .ignoresSafeArea(.container, edges: [.leading, .trailing])
+                    .padding(.bottom, 4)
                 
                 Button(action: {
                     print("next view")
                 }, label: {
                     VStack(alignment: .leading){
                             Image("Watch")
-                            .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.16)
-                                .padding(.top, 7)
-                                .padding(.bottom, 8)
-                                .padding(.leading, 8)
+                                .frame(width: geometry.size.width * 0.19, height: geometry.size.height * 0.16)
+                                .padding([.top, .bottom], 4)
+                                .padding(.leading, 7)
                             
-                            Text("Iniciar refeição")
+                            Text("Adicionar refeições")
                                 .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.05, alignment: .leading)
                                 .font(.system(size: 16.0))
+                                .fontWeight(.bold)
                                 .padding(.leading, 7)
                                 .padding(.trailing, 8)
                                 .padding(.bottom, 4)
                             
-                            Text("Alimente-se lentamente")
-                                .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.05, alignment: .leading)
+                            Text("Adicione lembretes")
+                                .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.04, alignment: .leading)
                                 .font(.system(size: 14.0))
                                 .foregroundColor(.accentColor)
                                 .padding(.leading, 7)
-                                .padding(.bottom, 7)
+                                .padding(.bottom, 12)
+    
                     }
-                }).frame(width: geometry.size.width, height: 85, alignment: .leading)
-                    .buttonBorderShape(.roundedRectangle(radius: 20.0))
+                }).frame(width: geometry.size.width, height: 85)
+                    .buttonBorderShape(.roundedRectangle(radius: 16.0))
             }
         }
 
