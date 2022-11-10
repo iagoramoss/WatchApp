@@ -21,6 +21,7 @@ struct SuggestionView: View {
     var body: some View {
         
         let randomTips = appreciativeTip.randomElement()!
+        
         ScrollView {
             GeometryReader { geometry in
                 VStack{
@@ -33,18 +34,17 @@ struct SuggestionView: View {
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .leading)
                         .font(.system(size: 16.0))
                         .fontWeight(.semibold)
-                        .padding(.leading, 8)
-                        .padding(.bottom, 8)
+                        .padding([.leading, .bottom], 8)
                     
                     Text(randomTips)
                         .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .leading)
                         .font(.system(size: 14.0))
                         .lineLimit(nil)
                         .lineSpacing(0.1)
+                        .padding([.leading, .trailing], 4)
                         .padding(.bottom, 8)
                         .multilineTextAlignment(.leading)
-                    //  .padding(.leading, 8)
-                    
+
                     Button(action: {
                         print("click me")
                     }, label: {
@@ -54,7 +54,8 @@ struct SuggestionView: View {
                             .cornerRadius(9.0)
                     }).frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
                 }
-            }.frame(height: WKInterfaceDevice.current().screenBounds.size.height * 1, alignment: .leading)
+            }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
+                .padding(.bottom, 4)
         }
     }
 }
