@@ -84,10 +84,10 @@
 		86B47AB329197D0A0095B1FA /* Challenge_Apple_Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				9F2FF0F229218B7C00D87E45 /* SuggestionView.swift */,
 				86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */,
 				868629F6291EBD1100EC7B2C /* ReminderView.swift */,
 				86B47AB629197D0A0095B1FA /* HomeView.swift */,
+				9F2FF0F229218B7C00D87E45 /* SuggestionView.swift */,
 				9F2B6438291ED1CC008BA2DB /* TesteView.swift */,
 				86B47AB829197D0B0095B1FA /* Assets.xcassets */,
 				86B47ABA29197D0B0095B1FA /* Preview Content */,

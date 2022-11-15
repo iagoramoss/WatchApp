@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import WatchKit
+import UIKit
 
 struct SuggestionView: View {
     
@@ -21,41 +21,44 @@ struct SuggestionView: View {
     var body: some View {
         
         let randomTips = appreciativeTip.randomElement()!
-        
-        ScrollView {
-            GeometryReader { geometry in
-                VStack{
-                    Image("Lunch")
-                        .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
-                        .padding(.top, 13)
-                        .padding(.bottom, 12)
+        NavigationView {
+            ScrollView {
+                GeometryReader { geometry in
                     
-                    Text("Sugestão apreciativa")
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .leading)
-                        .font(.system(size: 16.0))
-                        .fontWeight(.semibold)
-                        .padding([.leading, .bottom], 8)
-                    
-                    Text(randomTips)
-                        .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .leading)
-                        .font(.system(size: 14.0))
-                        .lineLimit(nil)
-                        .lineSpacing(0.1)
-                        .padding([.leading, .trailing], 4)
-                        .padding(.bottom, 8)
-                        .multilineTextAlignment(.leading)
-
-                    Button(action: {
-                        print("click me")
-                    }, label: {
-                        Text("Continuar")
-                            .frame(width: 140, height: 120, alignment: .center)
-                            .font(.system(size: 17.0))
-                            .cornerRadius(9.0)
-                    }).frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
-                }
-            }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
-                .padding(.bottom, 4)
+                    VStack{
+                        Image("Lunch")
+                            .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
+                            .padding(.top, 13)
+                            .padding(.bottom, 12)
+                        
+                        Text("Sugestão apreciativa")
+                            .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .leading)
+                            .font(.system(size: 16.0))
+                            .fontWeight(.semibold)
+                            .padding([.leading, .bottom], 8)
+                        
+                        Text(randomTips)
+                            .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .leading)
+                            .font(.system(size: 14.0))
+                            .lineLimit(nil)
+                            .lineSpacing(0.1)
+                            .padding([.leading, .trailing], 4)
+                            .padding(.bottom, 8)
+                            .multilineTextAlignment(.leading)
+                        NavigationLink(destination: TesteView(), label: {
+                            Text("Continuar")
+                                .frame(width: 140, height: 120, alignment: .center)
+                                .font(.system(size: 17.0))
+                                .cornerRadius(9.0)
+                        }).frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
+                            .navigationBarTitleDisplayMode(.inline)
+                            .navigationTitle(" Início")
+                        
+                    }
+                }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
+                    .padding(.bottom, 4)
+                
+            }
         }
     }
 }

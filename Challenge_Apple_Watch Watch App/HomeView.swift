@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+//import UIKit
 
 struct HomeView: View {
     var body: some View {
         GeometryReader{ geometry in
             NavigationView {
                 VStack(spacing: 4) {
+                    
                     // Botão 1
+                    
                     Spacer(minLength: 8)
-                    NavigationLink(destination: TesteView(), label: {
+                    NavigationLink(destination: SuggestionView(), label: {
                         VStack(alignment: .leading){
                             Group{
                                 Image("Lunch")
@@ -33,16 +36,15 @@ struct HomeView: View {
                                     .font(.system(size: 14.0))
                                     .foregroundColor(.accentColor)
                                     .padding(.bottom, 7)
-                                    
+                                
                             }.padding(.leading, 4)
-                            
                         }
                     }).frame(width: geometry.size.width, height: geometry.size.height * 0.52)
                         .buttonBorderShape(.roundedRectangle(radius: 16.0))
-                      
+                    
                     // Botão 2
                     
-                    NavigationLink(destination: TesteView(), label: {
+                    NavigationLink(destination: ReminderView(), label: {
                         VStack(alignment: .leading){
                             Group {
                                 Image("Watch")
@@ -66,12 +68,13 @@ struct HomeView: View {
                         }
                     }).frame(width: geometry.size.width, height: geometry.size.height * 0.52)
                         .buttonBorderShape(.roundedRectangle(radius: 16.0))
-                       
+                    
                 }.edgesIgnoringSafeArea(.horizontal)
                     .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarTitle("App title")
+                    .navigationTitle("App title")
                     
             }
+            
         }
     }
 }
@@ -81,3 +84,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
