@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
     var body: some View {
         GeometryReader{ geometry in
@@ -17,6 +18,7 @@ struct HomeView: View {
                     NavigationLink(destination: MealView(), label: {
                         VStack(alignment: .leading){
                             Group{
+                                WKInterfaceDevice.current().play(.start)
                                 Image("Lunch")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.16)
                                     .padding(.top, 7)
@@ -37,6 +39,7 @@ struct HomeView: View {
                             }.padding(.leading, 4)
                             
                         }
+                        
                     }).frame(width: geometry.size.width, height: geometry.size.height * 0.52)
                         .buttonBorderShape(.roundedRectangle(radius: 16.0))
                       

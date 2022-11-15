@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
-import UIKit
+//import UIKit
 
 struct MealView: View {
+    
+    @State var timer: Timer?
+    @State var buttonBoolean = false
+    
     var body: some View {
        
         
@@ -18,17 +22,30 @@ struct MealView: View {
             
             Button(action: {
                 
-                WKInterfaceDevice.current().play(.start)
-//                WKInterfaceDevice.current().
-//                self.WKHapticType.click
-//                WKHapticType.start
-//                WKApplicationState
-                
-                
-                WKApplicationState.background.self
+                if buttonBoolean == false {
+                    self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { timer in
+                        WKInterfaceDevice.current().play(.start)
+                        //                WKInterfaceDevice.current().
+                        //                self.WKHapticType.click
+                        //                WKHapticType.start
+                        //                WKApplicationState\
+                    }
+                    buttonBoolean = true
+                } else {
+                    
+                    buttonBoolean = false
+                    timer?.invalidate()
+                }
+//                WKApplicationState.background.self
             }, label: {
                 
-                Text("Tap Me")
+               if buttonBoolean == false {
+                    Text("Iniciar")
+                } else {
+                    Text("Parar")
+//                    timer?.invalidate()
+                }
+              
             })
         }
     }
