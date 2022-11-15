@@ -18,7 +18,7 @@ struct HomeView: View {
                     NavigationLink(destination: MealView(), label: {
                         VStack(alignment: .leading){
                             Group{
-                                WKInterfaceDevice.current().play(.start)
+                        
                                 Image("Lunch")
                                     .frame(width: geometry.size.width * 0.2, height: geometry.size.height * 0.16)
                                     .padding(.top, 7)
