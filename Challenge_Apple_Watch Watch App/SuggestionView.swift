@@ -33,7 +33,7 @@ struct SuggestionView: View {
                     Text("Sugestão apreciativa")
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .leading)
                         .font(.system(size: 16.0))
-                        .fontWeight(.semibold)
+//                        .fontWeight(.semibold)
                         .padding([.leading, .bottom], 8)
                     
                     Text(randomTips)

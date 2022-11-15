@@ -14,7 +14,7 @@ struct HomeView: View {
                 VStack(spacing: 4) {
                     // Botão 1
                     Spacer(minLength: 8)
-                    NavigationLink(destination: TesteView(), label: {
+                    NavigationLink(destination: MealView(), label: {
                         VStack(alignment: .leading){
                             Group{
                                 Image("Lunch")
@@ -25,7 +25,7 @@ struct HomeView: View {
                                 Text("Iniciar refeição")
                                     .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.05, alignment: .leading)
                                     .font(.system(size: 16.0))
-                                    .fontWeight(.bold)
+//                                    .fontWeight(.bold)
                                     .padding([.trailing, .bottom], 4)
                                 
                                 Text("Alimente-se lentamente")
@@ -53,7 +53,7 @@ struct HomeView: View {
                                 Text("Adicionar refeições")
                                     .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.06, alignment: .leading)
                                     .font(.system(size: 16.0))
-                                    .fontWeight(.bold)
+//                                    .fontWeight(.bold)
                                     .padding(.trailing, 4)
                                     .padding(.bottom, 4)
                                 
