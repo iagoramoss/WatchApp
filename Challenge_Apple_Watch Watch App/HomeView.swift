@@ -21,6 +21,7 @@ struct HomeView: View {
                         }, label: {
                             Image("Food")
                                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
+                                .padding(.bottom, 12)
                         })
                     }).frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.45)
                         .padding(.bottom, 12)
@@ -31,16 +32,15 @@ struct HomeView: View {
                         .fontWeight(.bold)
                         .padding(.bottom, 8)
                     
-                    Text("Alimente-se lentamente")
-                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.04)
-                        .font(.system(size: 14.0))
-                        .foregroundColor(.accentColor)
+//                    Text("Alimente-se lentamente")
+//                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.04)
+//                        .font(.system(size: 14.0))
+//                        .foregroundColor(.accentColor)
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle {
-                    Text("App title")
-                    .foregroundColor(.blue)
-                    .padding(.trailing, 64)}
+                    Text("Appreciate")
+                    .padding(.trailing, 40)}
             }
         }
     }
