@@ -11,11 +11,7 @@ import SwiftUI
 struct Challenge_Apple_Watch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            TabView{
-                AnimationView()
-                StopEatingView()
-            }
-            .tabViewStyle(PageTabViewStyle())
+            TransitionView()
         }
     }
 }
