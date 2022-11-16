@@ -19,7 +19,7 @@ struct ReminderView: View {
                     Text("Defina um horário para as suas refeições.")
                         .font(.system(size: 14.0))
                         .padding(.bottom, 5.0)
-                    //                    List {
+                    // List {
                     ForEach(items, id: \.self) { item in
                         HStack {
                             NavigationLink(destination: TesteView()) {
