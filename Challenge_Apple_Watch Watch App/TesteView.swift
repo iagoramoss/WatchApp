@@ -9,7 +9,23 @@ import SwiftUI
 
 struct TesteView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            
+            VStack {
+                Text("is simply dummy text of the printing and typeset.")
+//                    .font(.subheadline)
+                ZStack {
+                    Text("lalala")
+                       
+                } .background(Color.gray)
+                    .offset(x: 10, y: -40)
+                
+            }.padding(.horizontal, 5.0) .background(Color.blue)
+            
+          
+            
+        }.padding(.all, 40.0) .background(Color.red)
     }
 }
 

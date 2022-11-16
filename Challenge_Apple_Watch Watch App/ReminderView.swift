@@ -15,9 +15,33 @@ struct ReminderView: View {
     
     var body: some View {
         
+        
+//        NavigationView {
+//            NavigationLink(destination: HomeView(), label: {
+          
+//        }
         NavigationView {
+            
+            Button(action: {
+                
+              
+            }, label: {
+                
+                
+                NavigationLink(destination: HomeView(), label: {
+                    Text("casa")
+                })
+                
+                
+            })
+        }
+        
+        NavigationView {
+            
+            
             ScrollView {
                 
+
                 VStack {
                     Text("Defina um horário para as suas refeições.")
                         .font(.system(size: 14.0))
