@@ -15,27 +15,7 @@ struct ReminderView: View {
     
     var body: some View {
         
-        
-//        NavigationView {
-//            NavigationLink(destination: HomeView(), label: {
-          
-//        }
-        NavigationView {
-            
-            Button(action: {
-                
-              
-            }, label: {
-                
-                
-                NavigationLink(destination: HomeView(), label: {
-                    Text("casa")
-                })
-                
-                
-            })
-        }
-        
+
         NavigationView {
             
             

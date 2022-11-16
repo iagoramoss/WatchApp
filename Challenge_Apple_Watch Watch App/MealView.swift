@@ -37,42 +37,32 @@ struct MealView: View {
                  geometry in
                  
                      ZStack {
+                        
+//                         Color.gray.blur(radius: 30)
                          VStack(alignment: .center, spacing: 1.0){
                              
                              Text(alertBoolean ? "Texto aqui" : "")
                                  .font(.headline)
                                  .padding(.top, 5.0)
-//                             Spacer()
+         
                              Text(alertBoolean ? "Este é o texto do alerta do que deve ser feito, portanto coloque aqui os mínimos detalhes." : "")
-                                 
-//                                 .lineLimit(2)
-//                                 .minimumScaleFactor(0.5)
                                  .font(.footnote)
-//
-//                                 .multilineTextAlignment(.leading)
                                  .padding()
-             
+
                          }
-//                         Color.gray
-    //                         .edgesIgnoringSafeArea(.all)
+
                      }
+                     .background(alertBoolean ?  Color.brown.blur(radius: 15, opaque: false) : nil)
                      .frame(maxWidth: geometry.size.width * 1, maxHeight: 100)
-                     .background(alertBoolean ? Color.gray : nil)
-                     .overlay (
-                         if alertBoolean {
-                             ZStack {
-                                 Color(white: 0, opacity: 0.75)
-//                                 HomeView().tint(.white)
-                             }
-                         )
-//                     .animation(nil, value: alertBoolean)
-//                     .animation(.interpolatingSpring(stiffness: 10, damping: 1), value: alertBoolean)
+                     .background(Gradient(colors: [Color.gray, Color.blue])).blur(radius: 50)
+//
                      .edgesIgnoringSafeArea(.all)
                      .cornerRadius(5)
-    //                 .background()
+    //
                      .offset(CGSize(width: geometry.size.width * 0 , height: geometry.size.height * -0.1))
                  }
  //
+            
              
 
              
@@ -116,8 +106,11 @@ struct MealView: View {
                         
                         self.alertTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                             
-                            alertBoolean = true
-//                            alertBoolean.toggle()
+                            withAnimation {
+                                alertBoolean = true
+//                                alertBoolean.toggle()
+                            }
+//
                             count += 3
                             
                             if count == 12 {
@@ -125,7 +118,9 @@ struct MealView: View {
                                 
                                 alertTimer?.invalidate() // a depender do contexto
                                 count = 0
-                                alertBoolean = false
+                                withAnimation {
+                                    alertBoolean = false
+                                }
 
                                 
                             }
@@ -176,7 +171,6 @@ struct MealView: View {
                     
                 }
              */
-             
             
             Button("Parar") {
                 
