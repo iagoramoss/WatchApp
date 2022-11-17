@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct SuggestionView: View {
     
@@ -24,56 +23,53 @@ struct SuggestionView: View {
         NavigationView {
             ScrollView {
                 GeometryReader { geometry in
-                    
-                    VStack{
+                    VStack {
                         Image("Lunch")
                             .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
                             .padding(.top, 13)
                             .padding(.bottom, 12)
                         
                         Text("Sugestão apreciativa")
-                            .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .leading)
+                            .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .center)
                             .font(.system(size: 16.0))
                             .fontWeight(.semibold)
-                            .padding([.leading, .bottom], 8)
+                            .foregroundColor(.colorDefault)
+                            .padding(.bottom, 8)
                         
                         Text(randomTips)
-                            .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .leading)
+                            .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .center)
                             .font(.system(size: 14.0))
                             .lineLimit(nil)
-                            .lineSpacing(0.1)
-                            .padding([.leading, .trailing], 4)
-                            .padding(.bottom, 8)
                             .multilineTextAlignment(.leading)
-                        NavigationLink(destination: TesteView(), label: {
+                            .lineSpacing(0.1)
+                            .padding(.leading, 8)
+                            .padding(.bottom, 8)
+                        
+                        NavigationLink(destination: TransitionView(), label: {
                             Text("Continuar")
                                 .frame(width: 140, height: 120, alignment: .center)
                                 .font(.system(size: 17.0))
-                                .cornerRadius(9.0)
-                        }).frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
-                            .navigationBarTitleDisplayMode(.inline)
-                            .navigationTitle(" Início")
+                        })
+                        .background(Color.colorButton)
+                        .frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
+                        .cornerRadius(9.0)
+                        .padding([.leading, .trailing], 6)
                         
-                    }
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarBackButtonHidden(true)
+                        
+                    }.navigationTitle(
+                        Text("Sugestões")
+                            .foregroundColor(.colorDefault)
+                    )
                 }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
-                    .padding(.bottom, 4)
-                
+//                    .padding(.bottom, 4)
             }
         }
     }
 }
-
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
         SuggestionView()
     }
 }
-
-// ==== Comentários
-// Image("luch")
-// .resizable()
-// .scaledToFit()
-// .frame(width: UIScreen.main.bounds.width * 0.22, height: UIScreen.main.bounds.height * 0.14)
-// Text(randomTips)
-// .font(.system(size: 100))
-// .minimumScaleFactor(0.01)

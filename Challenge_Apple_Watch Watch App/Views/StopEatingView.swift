@@ -12,23 +12,26 @@ struct StopEatingView: View {
         GeometryReader{ geometry in
             NavigationView {
                 VStack(alignment: .center){
-                    NavigationLink(destination: AnimationView(), label: {
+                    NavigationLink(destination: HomeView(), label: {
+                        
                         Image("Food")
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
                             .padding(.bottom, 12)
-                        
+                            
                     }).frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                      
                         .padding(.bottom, 12)
                     
                     Text("Finalizar refeição")
                         .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.06)
+                        .fontWeight(.semibold)
                         .foregroundColor(.colorDefault)
                     
                 }.navigationBarTitleDisplayMode(.inline)
                     .navigationTitle {
                         Text("Appreciate")
                             .foregroundColor(.colorDefault)
-                            .padding(.trailing, 40)
+//                            .padding(.trailing, 40)
                     }
             }
         }

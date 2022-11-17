@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TransitionView: View {
     var body: some View {
-        TabView{
-            AnimationView()
-            StopEatingView()
-        }
-        .tabViewStyle(.page)
+            TabView {
+                AnimationView()
+                StopEatingView()
+            }
+            .tabViewStyle(.page)
     }
 }
 

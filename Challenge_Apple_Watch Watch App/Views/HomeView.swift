@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-//import UIKit
 
 struct HomeView: View {
-    
+
     var body: some View {
         GeometryReader{ geometry in
             NavigationView {
@@ -18,12 +17,13 @@ struct HomeView: View {
                         print("click me")
                     }, label: {
                         NavigationLink(destination:{
-                            TesteView()
+    
+                            SuggestionView()
                         }, label: {
                             Image("Food")
                                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
                                 .padding(.bottom, 12)
-                        })
+                        }).buttonStyle(PlainButtonStyle())
                     }).frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.45)
                         .padding(.bottom, 12)
                     
@@ -31,21 +31,19 @@ struct HomeView: View {
                         .frame(width: geometry.size.width * 0.65, height: geometry.size.height * 0.06)
                         .font(.system(size: 16.0))
                         .fontWeight(.bold)
+                        .foregroundColor(.colorDefault)
                         .padding(.bottom, 8)
-                    
-//                    Text("Alimente-se lentamente")
-//                        .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.04)
-//                        .font(.system(size: 14.0))
-//                        .foregroundColor(.accentColor)
+
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle {
                     Text("Appreciate")
-                    .padding(.trailing, 40)}
+                        .foregroundColor(.colorDefault)
+                    .padding(.trailing, 30)}
             }
-            
         }
     }
+    
 }
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
@@ -53,3 +51,10 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
+// Comentários
+
+
+// Text("Alimente-se lentamente")
+// .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.04)
+// .font(.system(size: 14.0))
+// .foregroundColor(.accentColor)

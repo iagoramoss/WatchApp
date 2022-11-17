@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
     static let colorDefault = Color("CustomGreen")
+    static let colorButton = Color("CustomYellow")
 }
