@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct TransitionView: View {
+    var endScreenAction: () -> ()
     var body: some View {
         TabView{
             AnimationView()
-            StopEatingView()
+            StopEatingView(endViewAcion: endScreenAction)
         }
         .tabViewStyle(.page)
     }
@@ -19,6 +20,6 @@ struct TransitionView: View {
 
 struct TransitionView_Previews: PreviewProvider {
     static var previews: some View {
-        TransitionView()
+        TransitionView(endScreenAction: {})
     }
 }

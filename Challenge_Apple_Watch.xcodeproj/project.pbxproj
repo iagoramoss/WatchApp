@@ -14,6 +14,7 @@
 		86B47ABC29197D0B0095B1FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */; };
 		9F2B6439291ED1CC008BA2DB /* StopEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B6438291ED1CC008BA2DB /* StopEatingView.swift */; };
 		9F7B143029256390008EAFA8 /* Color+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B142F29256390008EAFA8 /* Color+AppColors.swift */; };
+		9FE5DA062926B4360008CB21 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE5DA052926B4360008CB21 /* MainView.swift */; };
 		9FF543332925737F00EE7A0B /* TransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF543322925737F00EE7A0B /* TransitionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F2B6438291ED1CC008BA2DB /* StopEatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopEatingView.swift; sourceTree = "<group>"; };
 		9F7B142F29256390008EAFA8 /* Color+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColors.swift"; sourceTree = "<group>"; };
+		9FE5DA052926B4360008CB21 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9FF543322925737F00EE7A0B /* TransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				9FF543322925737F00EE7A0B /* TransitionView.swift */,
 				86B47AB629197D0A0095B1FA /* AnimationView.swift */,
 				9F2B6438291ED1CC008BA2DB /* StopEatingView.swift */,
+				9FE5DA052926B4360008CB21 /* MainView.swift */,
 				86B47AB829197D0B0095B1FA /* Assets.xcassets */,
 				86B47ABA29197D0B0095B1FA /* Preview Content */,
 			);
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */,
+				9FE5DA062926B4360008CB21 /* MainView.swift in Sources */,
 				9FF543332925737F00EE7A0B /* TransitionView.swift in Sources */,
 				9F7B143029256390008EAFA8 /* Color+AppColors.swift in Sources */,
 				86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */,
