@@ -13,6 +13,7 @@
 		86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB629197D0A0095B1FA /* AnimationView.swift */; };
 		86B47AB929197D0B0095B1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47AB829197D0B0095B1FA /* Assets.xcassets */; };
 		86B47ABC29197D0B0095B1FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */; };
+		9F11D1FF29270B0000AD752E /* SuggestionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11D1FE29270B0000AD752E /* SuggestionOptions.swift */; };
 		9F2B6439291ED1CC008BA2DB /* StopEatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B6438291ED1CC008BA2DB /* StopEatingView.swift */; };
 		9F2FF0F329218B7C00D87E45 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FF0F229218B7C00D87E45 /* SuggestionView.swift */; };
 		9F7B143029256390008EAFA8 /* Color+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B142F29256390008EAFA8 /* Color+AppColors.swift */; };
@@ -53,6 +54,7 @@
 		86B47AB629197D0A0095B1FA /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		86B47AB829197D0B0095B1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9F11D1FE29270B0000AD752E /* SuggestionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionOptions.swift; sourceTree = "<group>"; };
 		9F2B6438291ED1CC008BA2DB /* StopEatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopEatingView.swift; sourceTree = "<group>"; };
 		9F2FF0F229218B7C00D87E45 /* SuggestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		9F7B142F29256390008EAFA8 /* Color+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColors.swift"; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		86B47AB329197D0A0095B1FA /* Challenge_Apple_Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				9F11D1FD2926FCBB00AD752E /* Models */,
+				9F11D1FC2926FCA500AD752E /* ViewModels */,
 				9FE5DA0229266B7B0008CB21 /* Views */,
 				9F7B143229256790008EAFA8 /* Extensions */,
 				86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */,
@@ -107,6 +111,21 @@
 				86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9F11D1FC2926FCA500AD752E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9F11D1FE29270B0000AD752E /* SuggestionOptions.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9F11D1FD2926FCBB00AD752E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9F7B143229256790008EAFA8 /* Extensions */ = {
@@ -238,6 +257,7 @@
 				9FB3EF802925841A00C87F77 /* HomeView.swift in Sources */,
 				86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */,
 				9FF543332925737F00EE7A0B /* TransitionView.swift in Sources */,
+				9F11D1FF29270B0000AD752E /* SuggestionOptions.swift in Sources */,
 				9F7B143029256390008EAFA8 /* Color+AppColors.swift in Sources */,
 				86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */,
 				9F2B6439291ED1CC008BA2DB /* StopEatingView.swift in Sources */,

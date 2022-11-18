@@ -10,7 +10,12 @@ import SwiftUI
 struct AnimationView: View {
     
     var body: some View {
-        Text("Página de Animação")
+        ZStack {
+            Text("Página de Animação")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
+        .padding()
 //        .tabViewStyle(.page)
     }
 }

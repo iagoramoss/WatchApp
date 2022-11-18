@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct TransitionView: View {
+    var closeViewAction: () -> ()
     var body: some View {
+        ZStack{
             TabView {
                 AnimationView()
-                StopEatingView()
+                StopEatingView(nextViewAction: closeViewAction)
             }
             .tabViewStyle(.page)
+        }
     }
 }
 
 struct TransitionView_Previews: PreviewProvider {
     static var previews: some View {
-        TransitionView()
+        TransitionView(closeViewAction: {})
     }
 }

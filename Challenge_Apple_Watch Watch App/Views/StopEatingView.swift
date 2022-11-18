@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct StopEatingView: View {
+    
+    var nextViewAction: () -> ()
+    
     var body: some View {
         GeometryReader{ geometry in
-            NavigationView {
+            NavigationStack{
                 VStack(alignment: .center){
-                    NavigationLink(destination: HomeView(), label: {
-                        
+                    Button(action: {
+                        nextViewAction()
+                    },
+                    label: {
                         Image("Food")
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
                             .padding(.bottom, 12)
-                            
+                        
                     }).frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
-                      
                         .padding(.bottom, 12)
                     
                     Text("Finalizar refeição")
@@ -27,12 +31,12 @@ struct StopEatingView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.colorDefault)
                     
-                }.navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle {
+                }.toolbar{
+                    ToolbarItem(placement: .cancellationAction){
                         Text("Appreciate")
                             .foregroundColor(.colorDefault)
-//                            .padding(.trailing, 40)
                     }
+                }
             }
         }
     }
@@ -40,6 +44,6 @@ struct StopEatingView: View {
 
 struct StopEatingView_Previews: PreviewProvider {
     static var previews: some View {
-        StopEatingView()
+        StopEatingView(nextViewAction: {})
     }
 }
