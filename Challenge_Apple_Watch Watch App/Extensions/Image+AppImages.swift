@@ -13,4 +13,11 @@ extension Image {
     static let paladar = Image("Paladar")
     static let lunch = Image("Lunch")
     static let food = Image("Food")
+    static let borderCream = Image("borderCream")
+    static let borderOrange = Image("borderOrange")
+    static let borderGreen = Image("borderGreen")
+    static let circleCream = Image("circleOrange")
+    static let circleOrange = Image("circleOrange")
+    static let circleGreen = Image("circleGreen")
+    
 }
