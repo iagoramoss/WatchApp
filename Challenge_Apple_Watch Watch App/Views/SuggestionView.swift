@@ -49,7 +49,7 @@ struct SuggestionView: View {
                             DefaultButtonView(
                                 text: "Continuar",
                                 width: geometry.size.width * 0.93,
-                                height: geometry.size.height * 0.16,
+                                height: 44,
                                 cornerRadius: 22.0,
                                 action: {
                                     showTransitionView.toggle()
