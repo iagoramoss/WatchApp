@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @EnvironmentObject var eatingTime: EatingTime
     @State var showSuggestionView: Bool = false
     
