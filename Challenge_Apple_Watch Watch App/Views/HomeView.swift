@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
-
+    @EnvironmentObject var eatingTime: EatingTime
+    
     var body: some View {
         GeometryReader{ geometry in
             NavigationView {
                 VStack(alignment: .center){
                     Button(action: {
-                        print("click me")
+                        
                     }, label: {
                         NavigationLink(destination:{
     

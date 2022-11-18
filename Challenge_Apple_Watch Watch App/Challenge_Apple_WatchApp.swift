@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct Challenge_Apple_Watch_Watch_AppApp: App {
+    @ObservedObject var eatingTime = EatingTime()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(eatingTime)
         }
     }
 }

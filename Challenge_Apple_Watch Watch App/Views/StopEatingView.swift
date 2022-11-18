@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StopEatingView: View {
+    @EnvironmentObject var eatingTime: EatingTime
+    
     var body: some View {
         GeometryReader{ geometry in
             NavigationView {
@@ -18,9 +20,9 @@ struct StopEatingView: View {
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
                             .padding(.bottom, 12)
                             
-                    }).frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
-                      
-                        .padding(.bottom, 12)
+                    })
+                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                    .padding(.bottom, 12)
                     
                     Text("Finalizar refeição")
                         .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.06)
