@@ -14,36 +14,39 @@ struct HomeView: View {
     
     var body: some View {
         GeometryReader{ geometry in
-            NavigationStack{
-                VStack(alignment: .center){
-                    Button(action: {
-                        showSuggestionView.toggle()
-                    }, label: {
-                        Image("Food")
-                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
-                            .padding(.bottom, 12)
-                    }).frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.45)
-                        .buttonStyle(PlainButtonStyle())
-                        .padding(.bottom, 12)
-                    
-                    Text("Iniciar refeição")
-                        .frame(width: geometry.size.width * 0.65, height: geometry.size.height * 0.06)
-                        .font(.system(size: 16.0))
-                        .fontWeight(.bold)
-                        .foregroundColor(.colorDefault)
-                        .padding(.bottom, 8)
-                    
-                }
-                .toolbar{
-                    ToolbarItem(placement: .cancellationAction){
-                        Text("Appreciate")
+            ZStack{
+                NavigationStack{
+                    VStack(alignment: .center){
+                        Button(action: {
+                            showSuggestionView.toggle()
+                        }, label: {
+                            Image("Food")
+                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
+                            
+                        }).frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.45)
+                            .buttonStyle(PlainButtonStyle())
+
+                        Text("Iniciar refeição")
+                            .frame(width: geometry.size.width * 0.65, height: geometry.size.height * 0.06)
+                            .font(.system(size: 16.0))
+                            .fontWeight(.bold)
                             .foregroundColor(.colorDefault)
+                            .padding(.top, 16)
+                        
                     }
+                    .toolbar{
+                        ToolbarItem(placement: .cancellationAction){
+                            Text("Appreciate")
+                                .foregroundColor(.colorDefault)
+                        }
+                    }
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.black)
+                
+                if showSuggestionView {
+                    SuggestionView(backHomeAction: {showSuggestionView.toggle()})
+                    
                 }
-            }
-            if showSuggestionView {
-                SuggestionView()
-                  
             }
         }
     }

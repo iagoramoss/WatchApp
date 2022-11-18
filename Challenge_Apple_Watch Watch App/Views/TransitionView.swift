@@ -16,7 +16,9 @@ struct TransitionView: View {
                 StopEatingView(nextViewAction: closeViewAction)
             }
             .tabViewStyle(.page)
-        }
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black)
     }
 }
 

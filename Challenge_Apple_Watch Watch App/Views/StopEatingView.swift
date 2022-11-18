@@ -21,14 +21,13 @@ struct StopEatingView: View {
                     label: {
                         Image("Food")
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
-                            .padding(.bottom, 12)
-                        
+
                     }).frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
-                        .padding(.bottom, 12)
                     
                     Text("Finalizar refeição")
                         .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.06)
                         .fontWeight(.semibold)
+                        .padding(.top, 16)
                         .foregroundColor(.colorDefault)
                     
                 }.toolbar{

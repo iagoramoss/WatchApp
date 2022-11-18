@@ -10,86 +10,87 @@ import SwiftUI
 struct SuggestionView: View {
     
     @State var showTransition: Bool = false
-    @State var backHome: Bool = false
     
-    //    @Environment(\.presentationMode) var presentationMode
+    var backHomeAction: () -> ()
     
     var appreciativeTip: [String: String] = [
-        "tato" : "Delicie lentamente a sua refeição e tente reconhecer os seus diferentes temperos.",
-        "paladar" : "Sinta a textura da sua comida. É fácil morder ou é preciso que você quebre enquanto mastiga?",
-        "olfato" : "Sinta o aroma da sua comida perceba suas emoções. Lhe traz alguma lembrança ? Qual a sensação?",
+        "Tato" : "Delicie lentamente a sua refeição e tente reconhecer os seus diferentes temperos.",
+        "Paladar" : "Sinta a textura da sua comida. É fácil morder ou é preciso que você quebre enquanto mastiga?",
+        "Olfato" : "Sinta o aroma da sua comida perceba suas emoções. Lhe traz alguma lembrança ? Qual a sensação?",
     ]
     
     var body: some View {
         
         let randomTips = appreciativeTip.randomElement()!
         
-        NavigationStack {
-            ScrollView {
-                GeometryReader { geometry in
-                    VStack {
-                        Image(randomTips.key)
-                            .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
-                            .padding(.top, 13)
-                            .padding(.bottom, 12)
-                        
-                        Text("Sugestão apreciativa")
-                            .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .center)
-                            .font(.system(size: 16.0))
-                            .fontWeight(.semibold)
-                            .foregroundColor(.colorDefault)
-                            .padding(.bottom, 8)
-                        
-                        Text(randomTips.value)
-                            .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .center)
-                            .font(.system(size: 14.0))
-                            .lineLimit(nil)
-                            .multilineTextAlignment(.leading)
-                            .lineSpacing(0.1)
-                            .padding(.leading, 8)
-                            .padding(.bottom, 8)
-                        
-                        // Botão Continuar
-                        Button(action: {
-                            showTransition.toggle()
+        ZStack{
+            NavigationStack {
+                ScrollView {
+                    GeometryReader { geometry in
+                        VStack {
+                            Image(randomTips.key)
+                                .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
+                                .padding(.top, 13)
+                                .padding(.bottom, 12)
                             
-                        },label: {
-                            Text("Continuar")
-                                .frame(width: 140, height: 120, alignment: .center)
-                                .font(.system(size: 17.0))
-                        })
-                        .background(Color.colorButton)
-                        .frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
-                        .cornerRadius(9.0)
-                        .padding([.leading, .trailing], 6)
+                            Text("Sugestão apreciativa")
+                                .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .center)
+                                .font(.system(size: 16.0))
+                                .fontWeight(.semibold)
+                                .foregroundColor(.colorDefault)
+                                .padding(.bottom, 8)
+                            
+                            Text(randomTips.value)
+                                .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .center)
+                                .font(.system(size: 14.0))
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.leading)
+                                .lineSpacing(0.1)
+                                .padding(.leading, 8)
+                                .padding(.bottom, 8)
+                            
+                            // Botão Continuar
+                            Button(action: {
+                                showTransition.toggle()
+                                
+                            },label: {
+                                Text("Continuar")
+                                    .frame(width: 140, height: 120, alignment: .center)
+                                    .font(.system(size: 17.0))
+                            })
+                            .background(Color.colorButton)
+                            .frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
+                            .cornerRadius(9.0)
+                            .padding([.leading, .trailing], 6)
+                            
+                            // "Navigation title" personalizada
+                            .toolbar{
+                                ToolbarItem(placement: .cancellationAction){
+                                    Button(action: {
+                                        backHomeAction()
 
-                        // "Navigation title" personalizada
-                        .toolbar{
-                            ToolbarItem(placement: .cancellationAction){
-                                Button(action: {
-                                    backHome.toggle()
-//                            presentationMode.wrappedValue.dismiss()
-                                }, label: {
-                                    Image(systemName: "chevron.backward.circle.fill")
-                                    Text("Sugestões")
-                                }).foregroundColor(.colorDefault)
+                                    }, label: {
+                                        Image(systemName: "chevron.backward.circle.fill")
+                                        Text("Sugestões")
+                                    }).foregroundColor(.colorDefault)
+                                }
                             }
                         }
-                        if showTransition{
-                            TransitionView(closeViewAction: {})
-                        }
-                    }
-                }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
+                    }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
+                }
             }
-            if backHome{
-                HomeView()
+            if showTransition{
+                TransitionView(closeViewAction: {
+                    showTransition.toggle()
+                    backHomeAction()
+                })
             }
         }
     }
 }
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
-        SuggestionView()
+        SuggestionView(backHomeAction: {})
     }
 }
 
