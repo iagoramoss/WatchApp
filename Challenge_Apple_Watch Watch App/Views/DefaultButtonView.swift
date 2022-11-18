@@ -23,8 +23,9 @@ struct DefaultButtonView: View{
                 .frame(width: 140, height: 120, alignment: .center)
                 .font(.system(size: 17.0))
         })
-        .background(Color.colorButton)
         .frame(width: self.width, height: self.height)
+        .buttonBorderShape(.capsule)
+        .background(Color.colorButton)
         .cornerRadius(cornerRadius)
         .padding([.leading, .trailing], 6)
     }

@@ -13,22 +13,18 @@ struct SuggestionView: View {
     
     var backHomeAction: () -> ()
     
-    var appreciativeTip: [String: String] = [
-        "Tato" : "Delicie lentamente a sua refeição e tente reconhecer os seus diferentes temperos.",
-        "Paladar" : "Sinta a textura da sua comida. É fácil morder ou é preciso que você quebre enquanto mastiga?",
-        "Olfato" : "Sinta o aroma da sua comida perceba suas emoções. Lhe traz alguma lembrança ? Qual a sensação?",
-    ]
-    
     var body: some View {
         
-        let randomTips = appreciativeTip.randomElement()!
+    let tip = AppreciateTips.allCases.randomElement()!
+    let tipTitle = String(describing: tip.rawValue)
+    let tipImage = tip.image
         
         ZStack{
             NavigationStack {
                 ScrollView {
                     GeometryReader { geometry in
                         VStack {
-                            Image(randomTips.key)
+                            tipImage
                                 .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
                                 .padding(.top, 13)
                                 .padding(.bottom, 12)
@@ -40,7 +36,7 @@ struct SuggestionView: View {
                                 .foregroundColor(.colorDefault)
                                 .padding(.bottom, 8)
                             
-                            Text(randomTips.value)
+                            Text(tipTitle)
                                 .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .center)
                                 .font(.system(size: 14.0))
                                 .lineLimit(nil)
@@ -54,7 +50,7 @@ struct SuggestionView: View {
                                 text: "Continuar",
                                 width: geometry.size.width * 0.93,
                                 height: geometry.size.height * 0.16,
-                                cornerRadius: 9.0,
+                                cornerRadius: 22.0,
                                 action: {
                                     showTransitionView.toggle()
                                 }
@@ -65,7 +61,7 @@ struct SuggestionView: View {
                                 ToolbarItem(placement: .cancellationAction){
                                     Button(action: {
                                         backHomeAction()
-
+                                        
                                     }, label: {
                                         Image(systemName: "chevron.backward.circle.fill")
                                         Text("Sugestões")
@@ -88,6 +84,7 @@ struct SuggestionView: View {
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
         SuggestionView(backHomeAction: {})
+        //            .environmentObject(EatingTime())
     }
 }
 
