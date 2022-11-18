@@ -50,18 +50,15 @@ struct SuggestionView: View {
                                 .padding(.bottom, 8)
                             
                             // Botão Continuar
-                            Button(action: {
-                                showTransitionView.toggle()
-                                
-                            },label: {
-                                Text("Continuar")
-                                    .frame(width: 140, height: 120, alignment: .center)
-                                    .font(.system(size: 17.0))
-                            })
-                            .background(Color.colorButton)
-                            .frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
-                            .cornerRadius(9.0)
-                            .padding([.leading, .trailing], 6)
+                            DefaultButtonView(
+                                text: "Continuar",
+                                width: geometry.size.width * 0.93,
+                                height: geometry.size.height * 0.16,
+                                cornerRadius: 9.0,
+                                action: {
+                                    showTransitionView.toggle()
+                                }
+                            )
                             
                             // "Navigation title" personalizada
                             .toolbar{

@@ -17,6 +17,7 @@ struct HomeView: View {
                 NavigationStack{
                     VStack(alignment: .center){
                         Button(action: {
+                            self.eatingTime.initEating()
                             showSuggestionView.toggle()
                         }, label: {
                             Image("Food")
@@ -47,6 +48,8 @@ struct HomeView: View {
                     
                 }
             }
+        }.sheet(isPresented: self.$eatingTime.presentAdvice) {
+            AdviceView()
         }
     }
 }

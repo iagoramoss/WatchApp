@@ -17,6 +17,7 @@ struct StopEatingView: View {
             NavigationStack{
                 VStack(alignment: .center){
                     Button(action: {
+                        self.eatingTime.stopEating()
                         nextViewAction()
                     },
                     label: {
