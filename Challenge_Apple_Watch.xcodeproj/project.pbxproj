@@ -98,8 +98,6 @@
 		86B47AB329197D0A0095B1FA /* Challenge_Apple_Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				9F11D1FD2926FCBB00AD752E /* Models */,
-				9F11D1FC2926FCA500AD752E /* ViewModels */,
 				9FE5DA0229266B7B0008CB21 /* Views */,
 				9F7B143229256790008EAFA8 /* Extensions */,
 				86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */,
@@ -116,20 +114,6 @@
 				86B47ABB29197D0B0095B1FA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		9F11D1FC2926FCA500AD752E /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		9F11D1FD2926FCBB00AD752E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		9F7B143229256790008EAFA8 /* Extensions */ = {
@@ -257,17 +241,13 @@
 				9F11D201292741EB00AD752E /* TesteView.swift in Sources */,
 				86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */,
 				9F2FF0F329218B7C00D87E45 /* SuggestionView.swift in Sources */,
-				9FB3EF822925845A00C87F77 /* TesteView.swift in Sources */,
 				67704E412926B49100CC0FB5 /* EatingTime.swift in Sources */,
 				86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */,
 				868629F7291EBD1100EC7B2C /* ReminderView.swift in Sources */,
-				86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */,
 				9FB3EF802925841A00C87F77 /* HomeView.swift in Sources */,
-				86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */,
 				9FF543332925737F00EE7A0B /* TransitionView.swift in Sources */,
 				9F7B143029256390008EAFA8 /* Color+AppColors.swift in Sources */,
 				67704E432926BE0900CC0FB5 /* TimeInterval+Minutes.swift in Sources */,
-				86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */,
 				9F11D203292745DB00AD752E /* Image+AppImages.swift in Sources */,
 				9F2B6439291ED1CC008BA2DB /* StopEatingView.swift in Sources */,
 			);
