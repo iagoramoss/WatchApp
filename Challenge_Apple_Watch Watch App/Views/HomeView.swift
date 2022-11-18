@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State var showView: Int = 0
     @State var showSuggestionView: Bool = false
     
     var body: some View {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SuggestionView: View {
     
-    @State var showTransition: Bool = false
+    @State var showTransitionView: Bool = false
     
     var backHomeAction: () -> ()
     
@@ -51,7 +51,7 @@ struct SuggestionView: View {
                             
                             // Botão Continuar
                             Button(action: {
-                                showTransition.toggle()
+                                showTransitionView.toggle()
                                 
                             },label: {
                                 Text("Continuar")
@@ -79,9 +79,9 @@ struct SuggestionView: View {
                     }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
                 }
             }
-            if showTransition{
+            if showTransitionView{
                 TransitionView(closeViewAction: {
-                    showTransition.toggle()
+                    showTransitionView.toggle()
                     backHomeAction()
                 })
             }
