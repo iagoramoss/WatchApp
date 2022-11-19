@@ -15,9 +15,9 @@ struct SuggestionView: View {
     
     var body: some View {
         
-    let tip = AppreciateTips.allCases.randomElement()!
-    let tipTitle = String(describing: tip.rawValue)
-    let tipImage = tip.image
+        let tip = AppreciateTips.allCases.randomElement()!
+        let tipTitle = String(describing: tip.rawValue)
+        let tipImage = tip.image
         
         ZStack{
             NavigationStack {
@@ -27,53 +27,83 @@ struct SuggestionView: View {
                             tipImage
                                 .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
                                 .padding(.top, 13)
-                                .padding(.bottom, 12)
+                                .padding(.bottom, 11)
                             
-                            Text("Sugestão apreciativa")
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .center)
-                                .font(.system(size: 16.0))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.colorDefault)
-                                .padding(.bottom, 8)
-                            
-                            Text(tipTitle)
-                                .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38, alignment: .center)
-                                .font(.system(size: 14.0))
-                                .lineLimit(nil)
-                                .multilineTextAlignment(.leading)
-                                .lineSpacing(0.1)
-                                .padding(.leading, 8)
-                                .padding(.bottom, 8)
-                            
-                            // Botão Continuar
-                            Button(action: {
-                                showTransitionView.toggle()
+                            if geometry.size.width <= 161{
+                                Text("Sugestão apreciativa")
+                                    .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
+                                    .font(.system(size: 14.0))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.colorDefault)
+                                    .padding(.leading, 8)
+                            }else {
+                                Text("Sugestão apreciativa")
+                                    .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
+                                    .font(.system(size: 16.0))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.colorDefault)
+                                    .padding(.leading, 8)
+                            }
+                            if tipTitle == AppreciateTips.paladar.rawValue{
+                                Text(AppreciateTips.paladar.rawValue)
+                                    .frame(width: geometry.size.width * 0.92, height: 70, alignment: .leading)
+                                    .font(.system(size: 14.0))
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(nil)
+                                    .edgesIgnoringSafeArea(.leading)
+                                    .padding(.bottom, 6)
+                                    .padding(.leading, 8)
                                 
-                            },label: {
-                                Text("Continuar")
-                                    .frame(width: 140, height: 120, alignment: .center)
-                                    .font(.system(size: 17.0))
-                            })
-                            .frame(width: geometry.size.width * 0.93, height: geometry.size.height * 0.16)
-                            .buttonBorderShape(.capsule)
-                            .background(Color.colorButton)
-                            .cornerRadius(22.0)
-                            .padding([.leading, .trailing], 6)
+                            }
+                            else if tipTitle == AppreciateTips.tato.rawValue{
+                                Text(AppreciateTips.tato.rawValue)
+                                    .frame(width: geometry.size.width * 0.92, height: 70, alignment: .leading)
+                                    .font(.system(size: 14.0))
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(nil)
+                                    .edgesIgnoringSafeArea(.leading)
+                                    .padding(.bottom, 6)
+                                    .padding(.leading, 8)
+                            }
+                            else {
+                                Text(tipTitle)
+                                    .frame(width: geometry.size.width * 0.92, height: 85, alignment: .leading)
+                                    .font(.system(size: 14.0))
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(nil)
+                                    .edgesIgnoringSafeArea(.leading)
+                                    .padding(.bottom, 6)
+                                    .padding(.leading, 8)
+                                
+                            }
+                            // Botão Continuar
+                            DefaultButtonView(
+                                text: "Continuar",
+                                width: geometry.size.width * 0.93,
+                                height: 44,
+                                cornerRadius: 22.0,
+                                action: {
+                                    showTransitionView.toggle()
+                                }
+                            )
                             
                             // "Navigation title" personalizada
                             .toolbar{
                                 ToolbarItem(placement: .cancellationAction){
                                     Button(action: {
                                         backHomeAction()
-                                        
                                     }, label: {
                                         Image(systemName: "chevron.backward.circle.fill")
                                         Text("Sugestões")
+                                            .frame(width: 80)
+                                            .padding(.trailing, 5)
                                     }).foregroundColor(.colorDefault)
                                 }
                             }
+                            
                         }
-                    }.frame(height: WKInterfaceDevice.current().screenBounds.size.height, alignment: .leading)
+                        
+                    }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
                 }
             }
             if showTransitionView{
@@ -92,5 +122,3 @@ struct SuggestionView_Previews: PreviewProvider {
     }
 }
 
-//        "Busque um ambiente  e tranquilo para realizar a refeição faz toda a diferença.",
-//        "Evite mexer no celular ou assistir à televisão enquanto se alimenta."

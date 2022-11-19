@@ -17,7 +17,7 @@ struct AnimationView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .padding()
-//        .tabViewStyle(.page)
+
     }
 }
 struct AnimationView_Previews: PreviewProvider {

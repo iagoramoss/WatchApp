@@ -16,20 +16,25 @@ struct StopEatingView: View {
         GeometryReader{ geometry in
             NavigationStack{
                 VStack(alignment: .center){
-                    Button(action: {
-                        nextViewAction()
-                    },
-                    label: {
-                        Image("Food")
-                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
-
-                    }).frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
                     
-                    Text("Finalizar refeição")
-                        .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.06)
-                        .fontWeight(.semibold)
-                        .padding(.top, 16)
-                        .foregroundColor(.colorDefault)
+                        Image("EndEat")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                            .padding(.top, 8)
+                    
+                        Text("Você já está saciado?")
+                            .frame(width: geometry.size.width, height: geometry.size.height * 0.09)
+                            .font(.system(size: 14))
+                            .padding(.top, 8)
+ 
+                    DefaultButtonView(text: "Finalizar refeição",
+                                      width: geometry.size.width,
+                                      height: 44,
+                                      cornerRadius: 22,
+                                      action: {self.eatingTime.stopEating()
+                        nextViewAction()})
+                    .padding(.top, 7)
                     
                 }.toolbar{
                     ToolbarItem(placement: .cancellationAction){
@@ -47,3 +52,18 @@ struct StopEatingView_Previews: PreviewProvider {
         StopEatingView(nextViewAction: {})
     }
 }
+
+//                    Button(action: {
+//                    self.eatingTime.stopEating()
+//                        nextViewAction()
+//                    },
+//                    label: {
+
+//                    }).frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+
+
+//                    Text("Finalizar refeição")
+//                        .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.06)
+//                        .fontWeight(.semibold)
+//                        .padding(.top, 16)
+//                        .foregroundColor(.colorDefault)
