@@ -13,7 +13,7 @@ struct AnimationView: View {
     @State var isAnimating = false
     
     var foreverAnimation: Animation {
-        Animation.linear(duration: 4.0)
+        Animation.linear(duration: 2.0)
             .repeatForever(autoreverses: false)
     }
     

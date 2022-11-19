@@ -17,19 +17,31 @@ struct HomeView: View {
             ZStack{
                 NavigationStack{
                     VStack(alignment: .center){
-//                        Spacer(minLength: 22.0)
-                        Image("StartEat")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geometry.size.width * 0.51, height: geometry.size.height * 0.3)
-                            .padding(.top, 22)
                         
-                        Text("Concentre-se no agora e aproveite sua refeição")
-                            .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
-                            .font(.system(size: 14))
-                            .lineLimit(nil)
-                            .multilineTextAlignment(.center)
-
+                        // Telas Menores
+                        if geometry.size.width <= 161{
+                            Image.startEat
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.35)
+                                .padding(.top, 40)
+//                                .fixedSize()
+                        }else {
+                            Image.startEat
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 93, height: 64)
+                            //                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+                                .padding(.top, 40)
+                            //                                .fixedSize()
+                        }
+                            Text("Concentre-se no agora e aproveite sua refeição")
+//                            .frame(width: 176, height: 39)
+                                .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
+                                .font(.system(size: 14))
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
+                               
                         DefaultButtonView(
                             text: "Iniciar refeição",
                             width: geometry.size.width * 0.93,
@@ -37,6 +49,8 @@ struct HomeView: View {
                             cornerRadius: 22.0,
                             action: { self.eatingTime.initEating()
                                 showSuggestionView.toggle()})
+                        .padding(.top, 8)
+                        .edgesIgnoringSafeArea(.bottom)
 
                     }
                     .toolbar{

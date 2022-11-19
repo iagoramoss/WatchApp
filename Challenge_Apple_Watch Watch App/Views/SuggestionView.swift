@@ -61,12 +61,12 @@ struct SuggestionView: View {
                                 }
                                 else {
                                     Text(tipTitle)
-                                        .frame(width: geometry.size.width * 0.92, height: 105, alignment: .leading)
+                                        .frame(width: geometry.size.width * 0.92, height: 100.5, alignment: .leading)
                                         .font(.system(size: 14.0))
                                         .multilineTextAlignment(.leading)
                                         .lineLimit(nil)
                                         .edgesIgnoringSafeArea(.leading)
-                                        .padding(.bottom, 6)
+//                                        .padding(.bottom, 6)
                                         .padding(.leading, 8)
                                     
                                 }

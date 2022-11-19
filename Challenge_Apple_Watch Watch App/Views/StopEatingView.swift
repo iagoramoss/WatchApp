@@ -17,16 +17,30 @@ struct StopEatingView: View {
             NavigationStack{
                 VStack(alignment: .center){
                     
-                        Image("EndEat")
+                    // Telas Menores
+                    
+                    if geometry.size.width <= 161{
+                        Image.endEat
                             .resizable()
                             .scaledToFit()
-                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
-                            .padding(.top, 8)
+                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5)
+                            .padding(.top, 15)
+                            .fixedSize()
+                        
+                    } else{
+                        Image.endEat
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 72, height: 92)
+                        //                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                            .padding(.top, 15)
+                            .fixedSize()
+                    }
                     
                         Text("Você já está saciado?")
                             .frame(width: geometry.size.width, height: geometry.size.height * 0.09)
                             .font(.system(size: 14))
-                            .padding(.top, 8)
+                            .padding(.top, 3)
  
                     DefaultButtonView(text: "Finalizar refeição",
                                       width: geometry.size.width,
@@ -34,7 +48,7 @@ struct StopEatingView: View {
                                       cornerRadius: 22,
                                       action: {self.eatingTime.stopEating()
                         nextViewAction()})
-                    .padding(.top, 7)
+                    .padding(.top, 10)
                     
                 }.toolbar{
                     ToolbarItem(placement: .cancellationAction){
