@@ -6,18 +6,34 @@
 //
 
 import SwiftUI
-import SpriteKit
 
 struct AnimationView: View {
     
+    @State var angle: Double = 0.0
+    @State var isAnimating = false
+    
+    var foreverAnimation: Animation {
+        Animation.linear(duration: 7.0)
+            .repeatForever(autoreverses: false)
+    }
+    
     var body: some View {
-        ZStack {
-            Text("Página de Animação")
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
-        .padding()
-//        .tabViewStyle(.page)
+        
+        Image("Food")
+            .rotationEffect(Angle(degrees: self.isAnimating ? -360.0 : 0.0))
+            .animation(self.foreverAnimation)
+            .onAppear {
+                self.isAnimating = true
+                
+            }
+        
+        Image("Food")
+            .rotationEffect(Angle(degrees: self.isAnimating ? -360.0 : 0.0))
+            .animation(self.foreverAnimation)
+            .onAppear {
+                self.isAnimating = true
+                
+            }
     }
 }
 struct AnimationView_Previews: PreviewProvider {
