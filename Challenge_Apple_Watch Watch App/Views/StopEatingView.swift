@@ -18,7 +18,6 @@ struct StopEatingView: View {
                 VStack(alignment: .center){
                     
                     // Telas Menores
-                    
                     if geometry.size.width <= 161{
                         Image.endEat
                             .resizable()
@@ -26,22 +25,22 @@ struct StopEatingView: View {
                             .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5)
                             .padding(.top, 15)
                             .fixedSize()
-                        
-                    } else{
+                    }
+                    
+                    // Telas Maiores
+                    else{
                         Image.endEat
                             .resizable()
                             .scaledToFit()
                             .frame(width: 72, height: 92)
-                        //                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
                             .padding(.top, 15)
                             .fixedSize()
                     }
+                    Text("Você já está saciado?")
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.09)
+                        .font(.system(size: 14))
+                        .padding(.top, 3)
                     
-                        Text("Você já está saciado?")
-                            .frame(width: geometry.size.width, height: geometry.size.height * 0.09)
-                            .font(.system(size: 14))
-                            .padding(.top, 3)
- 
                     DefaultButtonView(text: "Finalizar refeição",
                                       width: geometry.size.width,
                                       height: 44,
@@ -81,3 +80,5 @@ struct StopEatingView_Previews: PreviewProvider {
 //                        .fontWeight(.semibold)
 //                        .padding(.top, 16)
 //                        .foregroundColor(.colorDefault)
+
+//                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)

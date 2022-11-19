@@ -25,23 +25,28 @@ struct HomeView: View {
                                 .scaledToFit()
                                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.35)
                                 .padding(.top, 40)
-//                                .fixedSize()
-                        }else {
+                            Text("Concentre-se no agora e aproveite sua refeição")
+                                .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.26)
+                                .font(.system(size: 13))
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
+                            
+                        }
+                        // Telas Maiores
+                        else {
                             Image.startEat
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 93, height: 64)
-                            //                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
                                 .padding(.top, 40)
-                            //                                .fixedSize()
-                        }
                             Text("Concentre-se no agora e aproveite sua refeição")
-//                            .frame(width: 176, height: 39)
                                 .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
                                 .font(.system(size: 14))
                                 .lineLimit(nil)
                                 .multilineTextAlignment(.center)
-                               
+                        }
+                        
+                        // Botão para as duas Telas
                         DefaultButtonView(
                             text: "Iniciar refeição",
                             width: geometry.size.width * 0.93,
@@ -51,7 +56,7 @@ struct HomeView: View {
                                 showSuggestionView.toggle()})
                         .padding(.top, 8)
                         .edgesIgnoringSafeArea(.bottom)
-
+                        
                     }
                     .toolbar{
                         ToolbarItem(placement: .cancellationAction){
@@ -109,3 +114,8 @@ struct HomeView_Previews: PreviewProvider {
 // .fontWeight(.bold)
 // .foregroundColor(.colorDefault)
 // .padding(.top, 16)
+
+
+//                            .frame(width: 176, height: 39)
+//.frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+//                            .frame(width: 176, height: 39)

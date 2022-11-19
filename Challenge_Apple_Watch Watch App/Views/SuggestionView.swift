@@ -30,6 +30,7 @@ struct SuggestionView: View {
                                 .padding(.bottom, 11)
                             
                             // Telas Menores
+                            
                             if geometry.size.width <= 161{
                                 Text("Sugestão apreciativa")
                                     .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
@@ -66,12 +67,13 @@ struct SuggestionView: View {
                                         .multilineTextAlignment(.leading)
                                         .lineLimit(nil)
                                         .edgesIgnoringSafeArea(.leading)
-//                                        .padding(.bottom, 6)
                                         .padding(.leading, 8)
                                     
                                 }
                             }
+                            
                             // Telas Maiores
+                            
                             else {
                                 Text("Sugestão apreciativa")
                                     .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
@@ -157,7 +159,8 @@ struct SuggestionView: View {
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
         SuggestionView(backHomeAction: {})
-        //            .environmentObject(EatingTime())
+        // .environmentObject(EatingTime())
     }
 }
 
+//.padding(.bottom, 6)
