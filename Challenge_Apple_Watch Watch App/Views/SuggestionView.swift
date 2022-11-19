@@ -122,6 +122,7 @@ struct SuggestionView: View {
                                 cornerRadius: 22.0,
                                 action: {
                                     showTransitionView.toggle()
+                                    WKInterfaceDevice.current().play(.click)
                                 }
                             )
                             
