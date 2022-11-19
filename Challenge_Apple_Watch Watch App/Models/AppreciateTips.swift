@@ -9,8 +9,8 @@ import SwiftUI
 
 enum AppreciateTips: String, CaseIterable {
     case paladar = "Delicie lentamente a sua refeição e tente reconhecer os seus diferentes temperos."
-    case tato = "Busque um ambiente  e tranquilo para realizar a refeição faz toda a diferença?"
-    case olfato = "Sinta o aroma da sua comida perceba suas emoções. Lhe traz alguma lembrança? Qual a sensação?"
+    case tato = "Busque um ambiente tranquilo para realizar a refeição, faz toda diferença?"
+    case olfato = "Sinta o aroma da sua comida e perceba suas emoções. Lhe traz alguma lembrança? Qual a sensação?"
 
     var image: Image {
         switch self {
