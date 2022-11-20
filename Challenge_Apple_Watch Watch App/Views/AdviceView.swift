@@ -19,6 +19,7 @@ struct AdviceView: View {
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(width: 176, height: 39)
+//                    .frame(width: geometry.size.width, height: geometry.size.height * 0.2)
                     .padding(.top, 12)
                 
                 Text(self.eatingTime.adviceText ?? "")
@@ -26,6 +27,7 @@ struct AdviceView: View {
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(width: 176, height: 78)
+//                    .frame(width: geometry.size.width, height: geometry.size.height * 0.35)
                     .padding(.bottom, 8)
                 
                 DefaultButtonView(

@@ -87,7 +87,6 @@
 		6736696C292825A9002F715E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				9F1D7A4129280D9E00D6A95F /* AppreciateTips.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";

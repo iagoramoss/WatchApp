@@ -11,6 +11,7 @@ extension Image {
     static let tato = Image("Tato")
     static let olfato = Image("Olfato")
     static let paladar = Image("Paladar")
-    static let lunch = Image("Lunch")
-    static let food = Image("Food")
+    static let startEat = Image("StartEat")
+    static let endEat = Image("EndEat")
+    
 }

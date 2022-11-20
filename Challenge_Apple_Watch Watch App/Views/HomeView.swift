@@ -17,22 +17,45 @@ struct HomeView: View {
             ZStack{
                 NavigationStack{
                     VStack(alignment: .center){
-                        Button(action: {
-                            self.eatingTime.initEating()
-                            showSuggestionView.toggle()
-                        }, label: {
-                            Image("Food")
-                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
+                        
+                        // Telas Menores
+                        if geometry.size.width <= 161{
+                            Image.startEat
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.35)
+                                .padding(.top, 40)
+                            Text("Concentre-se no agora e aproveite sua refeição")
+                                .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.26)
+                                .font(.system(size: 13))
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
                             
-                        }).frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.45)
-                            .buttonStyle(PlainButtonStyle())
-
-                        Text("Iniciar refeição")
-                            .frame(width: geometry.size.width * 0.65, height: geometry.size.height * 0.06)
-                            .font(.system(size: 16.0))
-                            .fontWeight(.bold)
-                            .foregroundColor(.colorDefault)
-                            .padding(.top, 16)
+                        }
+                        // Telas Maiores
+                        else {
+                            Image.startEat
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 93, height: 64)
+                                .padding(.top, 40)
+                            Text("Concentre-se no agora e aproveite sua refeição")
+                                .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
+                                .font(.system(size: 14))
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
+                        }
+                        
+                        // Botão para as duas Telas
+                        DefaultButtonView(
+                            text: "Iniciar refeição",
+                            width: geometry.size.width * 0.93,
+                            height: 44,
+                            cornerRadius: 22.0,
+                            action: { self.eatingTime.initEating()
+                                showSuggestionView.toggle()})
+                        .padding(.top, 8)
+                        .edgesIgnoringSafeArea(.bottom)
                         
                     }
                     .toolbar{
@@ -42,7 +65,7 @@ struct HomeView: View {
                         }
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.black)
+                    .background(Color.black)
                 
                 if showSuggestionView {
                     SuggestionView(backHomeAction: {showSuggestionView.toggle()})
@@ -56,7 +79,7 @@ struct HomeView: View {
 }
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView() .environmentObject(EatingTime())
     }
 }
 
@@ -73,3 +96,26 @@ struct HomeView_Previews: PreviewProvider {
 //                Text("Appreciate")
 //                    .foregroundColor(.colorDefault)
 //                .padding(.trailing, 30)}
+
+
+//Button(action: {
+// self.eatingTime.initEating()
+//showSuggestionView.toggle()
+// }, label: {
+// Image("Food")
+// .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
+
+// }).frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.45)
+// .buttonStyle(PlainButtonStyle())
+
+// Text("Iniciar refeição")
+// .frame(width: geometry.size.width * 0.65, height: geometry.size.height * 0.06)
+//.font(.system(size: 16.0))
+// .fontWeight(.bold)
+// .foregroundColor(.colorDefault)
+// .padding(.top, 16)
+
+
+//                            .frame(width: 176, height: 39)
+//.frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
+//                            .frame(width: 176, height: 39)
