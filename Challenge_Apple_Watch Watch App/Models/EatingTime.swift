@@ -38,6 +38,9 @@ class EatingTime: ObservableObject{
                 
                 return
             }
+            
+            self.adviceTitle = "Você se alimenta em um tempo ideal!"
+            self.adviceText = "Muito bem, isso é fundamental para apreciar o seu alimento, continue assim!"
         }
     }
 }
