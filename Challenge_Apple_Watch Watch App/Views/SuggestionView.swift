@@ -10,6 +10,7 @@ import SwiftUI
 struct SuggestionView: View {
     
     @State var showTransitionView: Bool = false
+    @State var scrollAmount = 0.0
     
     var backHomeAction: () -> ()
     
@@ -145,7 +146,11 @@ struct SuggestionView: View {
                         }
                         
                     }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
-                }
+                    
+                    
+                } .digitalCrownRotation($scrollAmount, from: 1, through: 5, by: 0.1, sensitivity: .low, isContinuous: true, isHapticFeedbackEnabled: true)
+            
+
             }
             if showTransitionView{
                 TransitionView(closeViewAction: {
