@@ -24,9 +24,9 @@ struct AnimationView: View {
           
                 ZStack{
                     //leading white circle
-                    Image("plate")
-                        .resizable()
-                        .frame(width: 85.0, height: 85.0)
+                    Image("top_trailing_circle")
+//                        .resizable()
+//                        .frame(width: 85.0, height: 85.0)
                         .rotationEffect(Angle(degrees: self.isAnimating ? -360.0 : 0.0))
                         .animation(self.foreverAnimation)
                         .onAppear {
@@ -39,23 +39,23 @@ struct AnimationView: View {
                 ZStack {
                     
                     //top green circle
-                        Image("plate2")
-                        .resizable()
-                        .frame(width: 60.0, height: 60.0)
+                        Image("top_circle")
+//                        .resizable()
+//                        .frame(width: 60.0, height: 60.0)
                             .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
                              .animation(self.foreverAnimation)
                             .onAppear {
                                 self.isAnimating = true
                             }
-                } .padding(.top, -150)
+                } .padding(.top, -160)
                     .padding(.leading, 110)
                 
                 ZStack {
                     
                     //midle white circle
-                        Image("plate")
-                        .resizable()
-                        .frame(width: 75.0, height: 75.0)
+                        Image("midle_circle")
+//                        .resizable()
+//                        .frame(width: 75.0, height: 75.0)
                             .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
                              .animation(self.foreverAnimation)
                             .onAppear {
@@ -68,9 +68,9 @@ struct AnimationView: View {
                     
                     ZStack{
                         //trailing orange circle
-                        Image("plate1")
-                            .resizable()
-                            .frame(width: 90.0, height: 90.0)
+                        Image("bottom_leading_circle")
+//                            .resizable()
+//                            .frame(width: 90.0, height: 90.0)
                             .rotationEffect(Angle(degrees: self.isAnimating ? -360.0 : 0.0))
                             .animation(self.foreverAnimation)
                             .onAppear {
@@ -83,9 +83,9 @@ struct AnimationView: View {
                 ZStack{
                     
                     //bottom orange circle
-                    Image("plate1")
-                        .resizable()
-                        .frame(width: 130.0, height: 130.0)
+                    Image("bottom_circle")
+//                        .resizable()
+//                        .frame(width: 130.0, height: 130.0)
                         .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
                         .animation(self.foreverAnimation)
                         .onAppear {
