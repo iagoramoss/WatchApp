@@ -20,20 +20,19 @@ struct AdviceView: View {
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(width: geometry.size.width)
-    //                    .frame(width: geometry.size.width, height: geometry.size.height * 0.2)
                         .padding(.top, 12)
+                        .padding(.bottom, 8)
                     
                     Text(self.eatingTime.adviceText ?? "")
                         .font(.system(size: 14))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
-                        .frame(width: geometry.size.width)
-    //                    .frame(width: geometry.size.width, height: geometry.size.height * 0.35)
+                        .frame(width: geometry.size.width - 8)
                         .padding(.bottom, 8)
                     
                     DefaultButtonView(
                         text: "Ok",
-                        width: geometry.size.width * 0.93,
+                        width: geometry.size.width - 12,
                         height: 44,
                         cornerRadius: 22,
                         action: {
@@ -41,7 +40,7 @@ struct AdviceView: View {
                         }
                     )
                 }
-            }
+            }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
         }
     }
 }
