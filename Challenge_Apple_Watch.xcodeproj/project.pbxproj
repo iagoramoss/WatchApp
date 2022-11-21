@@ -139,6 +139,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		86CEC1C1292BEE8A004F0ACF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6765BCE629281F14003E3442 /* DefaultButtonView.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		9F7B143229256790008EAFA8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +168,7 @@
 				868629F6291EBD1100EC7B2C /* ReminderView.swift */,
 				9F11D200292741EB00AD752E /* TesteView.swift */,
 				67704E49292804A000CC0FB5 /* AdviceView.swift */,
-				6765BCE629281F14003E3442 /* DefaultButtonView.swift */,
+				86CEC1C1292BEE8A004F0ACF /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
