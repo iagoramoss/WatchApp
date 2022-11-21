@@ -137,7 +137,7 @@ struct SuggestionView: View {
                                         Image(systemName: "chevron.backward.circle.fill")
                                         Text("Sugestões")
                                             .frame(width: 80)
-                                            .padding(.trailing, 5)
+//                                            .padding(.trailing, 5)
                                     }).foregroundColor(.colorDefault)
                                 }
                             }
