@@ -13,7 +13,7 @@
 		67704E432926BE0900CC0FB5 /* TimeInterval+Minutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E422926BE0900CC0FB5 /* TimeInterval+Minutes.swift */; };
 		67704E4A292804A000CC0FB5 /* AdviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E49292804A000CC0FB5 /* AdviceView.swift */; };
 		868629F7291EBD1100EC7B2C /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868629F6291EBD1100EC7B2C /* ReminderView.swift */; };
-		86B47AB029197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86B47AB029197D0A0095B1FA /* Appreciate.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 86B47AAF29197D0A0095B1FA /* Appreciate.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */; };
 		86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB629197D0A0095B1FA /* AnimationView.swift */; };
 		86B47AB929197D0B0095B1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47AB829197D0B0095B1FA /* Assets.xcassets */; };
@@ -44,7 +44,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				86B47AB029197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app in Embed Watch Content */,
+				86B47AB029197D0A0095B1FA /* Appreciate.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,7 +59,7 @@
 		67704E49292804A000CC0FB5 /* AdviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceView.swift; sourceTree = "<group>"; };
 		868629F6291EBD1100EC7B2C /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		86B47AA929197D0A0095B1FA /* Challenge_Apple_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Apple_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge_Apple_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B47AAF29197D0A0095B1FA /* Appreciate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appreciate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_Apple_WatchApp.swift; sourceTree = "<group>"; };
 		86B47AB629197D0A0095B1FA /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		86B47AB829197D0B0095B1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				86B47AA929197D0A0095B1FA /* Challenge_Apple_Watch.app */,
-				86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */,
+				86B47AAF29197D0A0095B1FA /* Appreciate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			);
 			name = "Challenge_Apple_Watch Watch App";
 			productName = "Challenge_Apple_Watch Watch App";
-			productReference = 86B47AAF29197D0A0095B1FA /* Challenge_Apple_Watch Watch App.app */;
+			productReference = 86B47AAF29197D0A0095B1FA /* Appreciate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -418,12 +418,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Challenge_Apple_Watch Watch App/Preview Content\"";
-
 				DEVELOPMENT_TEAM = A7SRF7ZP35;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -432,7 +429,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Appreciate;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -452,12 +449,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Challenge_Apple_Watch Watch App/Preview Content\"";
-
 				DEVELOPMENT_TEAM = A7SRF7ZP35;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -466,7 +460,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Appreciate;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -485,9 +479,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-
 				DEVELOPMENT_TEAM = A7SRF7ZP35;
-
 				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate;
@@ -505,9 +497,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-
 				DEVELOPMENT_TEAM = A7SRF7ZP35;
-
 				INFOPLIST_KEY_CFBundleDisplayName = Challenge_Apple_Watch;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate;
