@@ -10,6 +10,7 @@ import SwiftUI
 struct SuggestionView: View {
     
     @State var showTransitionView: Bool = false
+    @State var scrollAmount = 0.0
     
     var backHomeAction: () -> ()
     
@@ -31,7 +32,7 @@ struct SuggestionView: View {
                             
                             // Telas Menores
                             
-                            if geometry.size.width <= 161{
+                            if geometry.size.width <= 174{
                                 Text("Sugestão apreciativa")
                                     .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
                                     .font(.system(size: 14.0))
@@ -145,7 +146,11 @@ struct SuggestionView: View {
                         }
                         
                     }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
-                }
+                    
+                    
+                } .digitalCrownRotation($scrollAmount, from: 1, through: 5, by: 0.1, sensitivity: .low, isContinuous: true, isHapticFeedbackEnabled: true)
+            
+
             }
             if showTransitionView{
                 TransitionView(closeViewAction: {
