@@ -11,34 +11,36 @@ struct AdviceView: View {
     @EnvironmentObject var eatingTime: EatingTime
     
     var body: some View {
-        GeometryReader{ geometry in
-            VStack{
-                Text(self.eatingTime.adviceTitle ?? "")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.colorDefault)
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(width: 176, height: 39)
-//                    .frame(width: geometry.size.width, height: geometry.size.height * 0.2)
-                    .padding(.top, 12)
-                
-                Text(self.eatingTime.adviceText ?? "")
-                    .font(.system(size: 14))
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(width: 176, height: 78)
-//                    .frame(width: geometry.size.width, height: geometry.size.height * 0.35)
-                    .padding(.bottom, 8)
-                
-                DefaultButtonView(
-                    text: "Ok",
-                    width: geometry.size.width * 0.93,
-                    height: 44,
-                    cornerRadius: 22,
-                    action: {
-                        self.eatingTime.presentAdvice.toggle()
-                    }
-                )
+        ScrollView{
+            GeometryReader{ geometry in
+                VStack{
+                    Text(self.eatingTime.adviceTitle ?? "")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.colorDefault)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(width: geometry.size.width)
+    //                    .frame(width: geometry.size.width, height: geometry.size.height * 0.2)
+                        .padding(.top, 12)
+                    
+                    Text(self.eatingTime.adviceText ?? "")
+                        .font(.system(size: 14))
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(width: geometry.size.width)
+    //                    .frame(width: geometry.size.width, height: geometry.size.height * 0.35)
+                        .padding(.bottom, 8)
+                    
+                    DefaultButtonView(
+                        text: "Ok",
+                        width: geometry.size.width * 0.93,
+                        height: 44,
+                        cornerRadius: 22,
+                        action: {
+                            self.eatingTime.presentAdvice.toggle()
+                        }
+                    )
+                }
             }
         }
     }
