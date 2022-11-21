@@ -28,7 +28,7 @@ struct AnimationView: View {
 //                        .resizable()
 //                        .frame(width: 85.0, height: 85.0)
                         .rotationEffect(Angle(degrees: self.isAnimating ? -360.0 : 0.0))
-                        .animation(self.foreverAnimation)
+                        .animation(self.foreverAnimation, value: 1)
                         .onAppear {
                             self.isAnimating = true
                         }
@@ -43,7 +43,7 @@ struct AnimationView: View {
 //                        .resizable()
 //                        .frame(width: 60.0, height: 60.0)
                             .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
-                             .animation(self.foreverAnimation)
+                             .animation(self.foreverAnimation, value: 1)
                             .onAppear {
                                 self.isAnimating = true
                             }
@@ -57,7 +57,7 @@ struct AnimationView: View {
 //                        .resizable()
 //                        .frame(width: 75.0, height: 75.0)
                             .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
-                             .animation(self.foreverAnimation)
+                             .animation(self.foreverAnimation, value: 1)
                             .onAppear {
                                 self.isAnimating = true
                             }
@@ -72,7 +72,7 @@ struct AnimationView: View {
 //                            .resizable()
 //                            .frame(width: 90.0, height: 90.0)
                             .rotationEffect(Angle(degrees: self.isAnimating ? -360.0 : 0.0))
-                            .animation(self.foreverAnimation)
+                            .animation(self.foreverAnimation, value: 1)
                             .onAppear {
                                 self.isAnimating = true
                             }
@@ -87,7 +87,7 @@ struct AnimationView: View {
 //                        .resizable()
 //                        .frame(width: 130.0, height: 130.0)
                         .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
-                        .animation(self.foreverAnimation)
+                        .animation(self.foreverAnimation, value: 1)
                         .onAppear {
                             self.isAnimating = true
                         }
