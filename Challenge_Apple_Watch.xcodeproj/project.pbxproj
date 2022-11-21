@@ -230,11 +230,11 @@
 			};
 			buildConfigurationList = 86B47AA629197D0A0095B1FA /* Build configuration list for PBXProject "Challenge_Apple_Watch" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 86B47AA229197D0A0095B1FA;
 			productRefGroup = 86B47AAA29197D0A0095B1FA /* Products */;
