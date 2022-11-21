@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "86B47AAE29197D0A0095B1FA"
-               BuildableName = "Challenge_Apple_Watch Watch App.app"
+               BuildableName = "Appreciate.app"
                BlueprintName = "Challenge_Apple_Watch Watch App"
                ReferencedContainer = "container:Challenge_Apple_Watch.xcodeproj">
             </BuildableReference>
@@ -59,7 +59,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86B47AAE29197D0A0095B1FA"
-            BuildableName = "Challenge_Apple_Watch Watch App.app"
+            BuildableName = "Appreciate.app"
             BlueprintName = "Challenge_Apple_Watch Watch App"
             ReferencedContainer = "container:Challenge_Apple_Watch.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "86B47AAE29197D0A0095B1FA"
-            BuildableName = "Challenge_Apple_Watch Watch App.app"
+            BuildableName = "Appreciate.app"
             BlueprintName = "Challenge_Apple_Watch Watch App"
             ReferencedContainer = "container:Challenge_Apple_Watch.xcodeproj">
          </BuildableReference>
