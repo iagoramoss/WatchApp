@@ -31,7 +31,7 @@ struct SuggestionView: View {
                             
                             // Telas Menores
                             
-                            if geometry.size.width <= 161{
+                            if geometry.size.width <= 174{
                                 Text("Sugestão apreciativa")
                                     .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
                                     .font(.system(size: 14.0))

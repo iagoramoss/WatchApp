@@ -18,7 +18,7 @@ struct StopEatingView: View {
                 VStack(alignment: .center){
                     
                     // Telas Menores
-                    if geometry.size.width <= 161{
+                    if geometry.size.width <= 174{
                         Image.endEat
                             .resizable()
                             .scaledToFit()

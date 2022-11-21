@@ -5,6 +5,8 @@
 //  Created by Dessana Santos on 11/11/22.
 //
 
+#if DEBUG
+
 import SwiftUI
 import WatchKit
 
@@ -61,3 +63,5 @@ struct ReminderView_Previews: PreviewProvider {
         ReminderView()
     }
 }
+
+#endif
