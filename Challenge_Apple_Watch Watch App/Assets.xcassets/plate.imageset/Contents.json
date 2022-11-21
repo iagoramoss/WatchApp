@@ -1,21 +1,20 @@
 {
   "images" : [
     {
-      "filename" : "plate4.pdf",
-      "idiom" : "universal",
-      "scale" : "1x"
+      "filename" : "animação1@2x 1.pdf",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "compression-type" : "lossless",
+      "filename" : "animação1@2x.pdf",
+      "idiom" : "watch"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "auto-scaling" : "auto"
   }
 }
