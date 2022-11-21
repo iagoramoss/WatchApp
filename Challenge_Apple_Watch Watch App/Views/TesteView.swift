@@ -5,6 +5,7 @@
 //  Created by Anne Victoria Batista Auzier on 18/11/22.
 //
 
+#if DEBUG
 import SwiftUI
 
 struct TesteView: View {
@@ -18,3 +19,4 @@ struct TesteView_Previews: PreviewProvider {
         TesteView()
     }
 }
+#endif
