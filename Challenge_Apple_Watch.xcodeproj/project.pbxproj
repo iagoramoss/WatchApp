@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		67366970292825FA002F715E /* AppreciateTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736696F292825FA002F715E /* AppreciateTips.swift */; };
 		6765BCE729281F14003E3442 /* DefaultButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765BCE629281F14003E3442 /* DefaultButtonView.swift */; };
+		6766E840292D62B90008949A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47AB829197D0B0095B1FA /* Assets.xcassets */; };
 		67704E412926B49100CC0FB5 /* EatingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E402926B49100CC0FB5 /* EatingTime.swift */; };
 		67704E432926BE0900CC0FB5 /* TimeInterval+Minutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E422926BE0900CC0FB5 /* TimeInterval+Minutes.swift */; };
 		67704E4A292804A000CC0FB5 /* AdviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E49292804A000CC0FB5 /* AdviceView.swift */; };
@@ -252,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6766E840292D62B90008949A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate.watch;
 				PRODUCT_NAME = Appreciate;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -436,7 +438,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -459,7 +461,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iago.Appreciate.watch;
 				PRODUCT_NAME = Appreciate;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -468,7 +470,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
