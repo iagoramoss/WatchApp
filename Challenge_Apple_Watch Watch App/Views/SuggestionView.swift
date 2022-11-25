@@ -25,25 +25,26 @@ struct SuggestionView: View {
                     GeometryReader { geometry in
                         VStack {
                             tipImage
-                                .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
+                                .fixedSize(horizontal: true, vertical: true)
+                                .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14, alignment: .center)
                                 .padding(.top, 13)
-                                .padding(.bottom, 11)
-                            
+
+//                           height: geometry.size.height * 0.09
                             Text("Sugestão apreciativa")
-                                .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
-                                .font(.system(size: 16.0))
+                                .fixedSize(horizontal: true, vertical: false)
+                                .frame(width: geometry.size.width - 17, height: 20, alignment: .leading)
+                                .font(.system(size: geometry.size.width * 0.087))
                                 .fontWeight(.semibold)
                                 .foregroundColor(.colorDefault)
-                                .padding(.leading, 8)
+//                                .padding(.top, 7)
                             
                             Text(tipTitle)
-                                .frame(width: geometry.size.width * 0.92, height: 85, alignment: .leading)
-                                .font(.system(size: 14.0))
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(width: geometry.size.width - 16, height: 85, alignment: .leading)
+                                .font(.system(size: geometry.size.width * 0.077))
                                 .multilineTextAlignment(.leading)
                                 .lineLimit(nil)
-                                .edgesIgnoringSafeArea(.leading)
-                                .padding(.bottom, 8)
-                                .padding(.leading, 8)
+//                                .padding(.top, 8)
                             
                             // Botão Continuar
                             DefaultButtonView(
@@ -55,25 +56,27 @@ struct SuggestionView: View {
                                     showTransitionView.toggle()
                                     WKInterfaceDevice.current().play(.click)
                                 }
-                            )
+                            ).padding(.top, 8)
+                        }
                             // "Navigation title" personalizada
                             .toolbar{
                                 ToolbarItem(placement: .cancellationAction){
                                     Button(action: {
                                         backHomeAction()
+                                        print(geometry.size.width)
+                                        print(geometry.size.height)
                                     }, label: {
                                         Image(systemName: "chevron.backward.circle.fill")
+                                            .font(.system(size: geometry.size.width * 0.093))
                                         Text("Sugestões")
-                                            .frame(width: 80)
-                                            .padding(.trailing, 5)
+                                            .frame(width: geometry.size.width * 0.46)
+                                            .font(.system(size: geometry.size.width * 0.087))
                                     }).foregroundColor(.colorDefault)
-                                }
                             }
                         }
-                    }
+                    }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
                 }
-            }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
-            
+            }
         }
         if showTransitionView {
             TransitionView(closeViewAction: {
@@ -94,3 +97,4 @@ struct SuggestionView_Previews: PreviewProvider {
 }
 
 //.padding(.bottom, 6)
+//geometry.size.width * 0.92 - titulo e texto
