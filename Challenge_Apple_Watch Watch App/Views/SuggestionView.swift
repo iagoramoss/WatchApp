@@ -65,6 +65,7 @@ struct SuggestionView: View {
                                         backHomeAction()
                                         print(geometry.size.width)
                                         print(geometry.size.height)
+                                        print(Font.title)
                                     }, label: {
                                         Image(systemName: "chevron.backward.circle.fill")
                                             .font(.system(size: geometry.size.width * 0.093))
