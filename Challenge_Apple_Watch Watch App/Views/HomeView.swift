@@ -15,57 +15,61 @@ struct HomeView: View {
     var body: some View {
         GeometryReader{ geometry in
             ZStack{
-                NavigationStack{
-                    VStack(alignment: .center){
-                        
-                        // Telas Menores
-                        if geometry.size.width <= 161{
-                            Image.startEat
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.35)
-                                .padding(.top, 40)
-                            Text("Concentre-se no agora e aproveite sua refeição.")
-                                .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.26)
-                                .font(.system(size: 13))
-                                .lineLimit(nil)
-                                .multilineTextAlignment(.center)
+                if #available(watchOS 9.0, *) {
+                    NavigationStack{
+                        VStack(alignment: .center){
+                            
+                            // Telas Menores
+                            if geometry.size.width <= 161{
+                                Image.startEat
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.35)
+                                    .padding(.top, 40)
+                                Text("Concentre-se no agora e aproveite sua refeição.")
+                                    .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.26)
+                                    .font(.system(size: 13))
+                                    .lineLimit(nil)
+                                    .multilineTextAlignment(.center)
+                                
+                            }
+                            // Telas Maiores
+                            else {
+                                Image.startEat
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 93, height: 64)
+                                    .padding(.top, 40)
+                                Text("Concentre-se no agora e aproveite sua refeição.")
+                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
+                                    .font(.system(size: 14))
+                                    .lineLimit(nil)
+                                    .multilineTextAlignment(.center)
+                            }
+                            
+                            // Botão para as duas Telas
+                            DefaultButtonView(
+                                text: "Iniciar refeição",
+                                width: geometry.size.width * 0.93,
+                                height: 44,
+                                cornerRadius: 22.0,
+                                action: { self.eatingTime.initEating()
+                                    showSuggestionView.toggle()})
+                            .padding(.top, 8)
+                            .edgesIgnoringSafeArea(.bottom)
                             
                         }
-                        // Telas Maiores
-                        else {
-                            Image.startEat
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 93, height: 64)
-                                .padding(.top, 40)
-                            Text("Concentre-se no agora e aproveite sua refeição.")
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
-                                .font(.system(size: 14))
-                                .lineLimit(nil)
-                                .multilineTextAlignment(.center)
+                        .toolbar{
+                            ToolbarItem(placement: .cancellationAction){
+                                Text("Appreciate")
+                                    .foregroundColor(.colorDefault)
+                            }
                         }
-                        
-                        // Botão para as duas Telas
-                        DefaultButtonView(
-                            text: "Iniciar refeição",
-                            width: geometry.size.width * 0.93,
-                            height: 44,
-                            cornerRadius: 22.0,
-                            action: { self.eatingTime.initEating()
-                                showSuggestionView.toggle()})
-                        .padding(.top, 8)
-                        .edgesIgnoringSafeArea(.bottom)
-                        
-                    }
-                    .toolbar{
-                        ToolbarItem(placement: .cancellationAction){
-                            Text("Appreciate")
-                                .foregroundColor(.colorDefault)
-                        }
-                    }
-                }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.black)
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.black)
+                } else {
+                    // Fallback on earlier versions
+                }
                 
                 if showSuggestionView {
                     SuggestionView(backHomeAction: {showSuggestionView.toggle()})

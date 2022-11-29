@@ -14,47 +14,51 @@ struct StopEatingView: View {
     
     var body: some View {
         GeometryReader{ geometry in
-            NavigationStack{
-                VStack(alignment: .center){
-                    
-                    // Telas Menores
-                    if geometry.size.width <= 174{
-                        Image.endEat
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5)
-                            .padding(.top, 15)
-                            .fixedSize()
-                    }
-                    
-                    // Telas Maiores
-                    else{
-                        Image.endEat
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 72, height: 92)
-                            .padding(.top, 15)
-                            .fixedSize()
-                    }
-                    Text("Você já está saciado?")
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.09)
-                        .font(.system(size: 14))
-                        .padding(.top, 3)
-                    
-                    DefaultButtonView(text: "Finalizar refeição",
-                                      width: geometry.size.width,
-                                      height: 44,
-                                      cornerRadius: 22,
-                                      action: {self.eatingTime.stopEating()
-                        nextViewAction()})
-                    .padding(.top, 10)
-                    
-                }.toolbar{
-                    ToolbarItem(placement: .cancellationAction){
-                        Text("Appreciate")
-                            .foregroundColor(.colorDefault)
+            if #available(watchOS 9.0, *) {
+                NavigationStack{
+                    VStack(alignment: .center){
+                        
+                        // Telas Menores
+                        if geometry.size.width <= 174{
+                            Image.endEat
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5)
+                                .padding(.top, 15)
+                                .fixedSize()
+                        }
+                        
+                        // Telas Maiores
+                        else{
+                            Image.endEat
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 72, height: 92)
+                                .padding(.top, 15)
+                                .fixedSize()
+                        }
+                        Text("Você já está saciado?")
+                            .frame(width: geometry.size.width, height: geometry.size.height * 0.09)
+                            .font(.system(size: 14))
+                            .padding(.top, 3)
+                        
+                        DefaultButtonView(text: "Finalizar refeição",
+                                          width: geometry.size.width,
+                                          height: 44,
+                                          cornerRadius: 22,
+                                          action: {self.eatingTime.stopEating()
+                            nextViewAction()})
+                        .padding(.top, 10)
+                        
+                    }.toolbar{
+                        ToolbarItem(placement: .cancellationAction){
+                            Text("Appreciate")
+                                .foregroundColor(.colorDefault)
+                        }
                     }
                 }
+            } else {
+                // Fallback on earlier versions
             }
         }
     }
