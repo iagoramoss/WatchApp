@@ -17,19 +17,22 @@ struct HomeView: View {
             GeometryReader{ geometry in
                 NavigationStack{
                     VStack(alignment: .center){
-                        
                         Image.startEat
                             .resizable()
                             .scaledToFit()
 //                            .frame(width: 93, height: 64)
                             .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.4)
-                            .padding(.top, 40)
+//                            .padding(.top, 40)
+                            .padding(.top, 30)
                         
                         Text("Concentre-se no agora e aproveite sua refeição.")
+                            .fixedSize(horizontal: false, vertical: true)
                             .frame(width: geometry.size.width - 8, height: geometry.size.height * 0.26)
-                            .font(.system(size: geometry.size.width * 0.077))
+//                            .font(.system(size: geometry.size.width * 0.077))
+                            .font(.footnote)
                             .lineLimit(nil)
                             .multilineTextAlignment(.center)
+                            .padding(.top, 5)
                         
                         // Botão para as duas Telas
                         DefaultButtonView(
@@ -39,7 +42,7 @@ struct HomeView: View {
                             cornerRadius: 22.0,
                             action: { self.eatingTime.initEating()
                                 showSuggestionView.toggle()})
-                        .padding(.top, 8)
+                        .padding(.top, 5)
                         .edgesIgnoringSafeArea(.bottom)
                         
                     }

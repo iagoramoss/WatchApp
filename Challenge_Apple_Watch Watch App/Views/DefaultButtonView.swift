@@ -21,7 +21,8 @@ struct DefaultButtonView: View{
         },label: {
             Text(self.text)
                 .frame(width: 140, height: 120, alignment: .center)
-                .font(.system(size: 17.0))
+//                .font(.system(size: 17.0))
+                .font(.subheadline)
         })
         .frame(width: self.width, height: self.height)
         .buttonBorderShape(.capsule)
