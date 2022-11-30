@@ -10,7 +10,7 @@ import SwiftUI
 struct StopEatingView: View {
     
     var nextViewAction: () -> ()
-    @EnvironmentObject var eatingTime: EatingTime
+    @EnvironmentObject var meal: Meal
     
     var body: some View {
         GeometryReader{ geometry in

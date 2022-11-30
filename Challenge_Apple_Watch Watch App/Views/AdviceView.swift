@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct AdviceView: View {
-    @EnvironmentObject var eatingTime: EatingTime
+    @EnvironmentObject var meal: Meal
     
     var body: some View {
         ScrollView{
             GeometryReader{ geometry in
                 VStack{
-                    Text(self.eatingTime.adviceTitle ?? "")
-//                        .font(.system(size: 16, weight: .semibold))
-                        .font(.caption)
-                        .fontWeight(.semibold)
+                    Text(self.meal.adviceTitle ?? "")
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(.colorDefault)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
@@ -25,21 +23,22 @@ struct AdviceView: View {
                         .padding(.top, 12)
                         .padding(.bottom, 8)
                     
-                    Text(self.eatingTime.adviceText ?? "")
-//                        .font(.system(size: 14))
-                        .font(.footnote)
+                    Text(self.meal.adviceText ?? "")
+                        .font(.system(size: 14))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(width: geometry.size.width - 8)
                         .padding(.bottom, 8)
                     
                     DefaultButtonView(
-                        text: "Ok",
                         width: geometry.size.width - 12,
                         height: 44,
                         cornerRadius: 22,
                         action: {
-                            self.eatingTime.presentAdvice.toggle()
+                            self.meal.presentAdvice.toggle()
+                        },
+                        label: {
+                            Text("Ok")
                         }
                     )
                 }
@@ -51,6 +50,6 @@ struct AdviceView: View {
 struct AdviceView_Previews: PreviewProvider {
     static var previews: some View {
         AdviceView()
-            .environmentObject(EatingTime())
+            .environmentObject(Meal())
     }
 }

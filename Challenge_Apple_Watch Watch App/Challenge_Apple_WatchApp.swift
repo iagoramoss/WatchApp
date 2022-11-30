@@ -10,12 +10,12 @@ import Combine
 
 @main
 struct Challenge_Apple_Watch_Watch_AppApp: App {
-    @ObservedObject var eatingTime = EatingTime()
+    @ObservedObject var meal: Meal = Meal()
     
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environmentObject(eatingTime)
+                .environmentObject(self.meal)
         }
     }
 }

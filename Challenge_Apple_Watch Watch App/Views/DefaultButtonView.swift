@@ -8,21 +8,18 @@
 import Foundation
 import SwiftUI
 
-struct DefaultButtonView: View{
-    let text: String
+struct DefaultButtonView<Content: View>: View{
     let width: CGFloat
     let height: CGFloat
     let cornerRadius: CGFloat
     let action: () -> ()
+    let label: () -> Content
     
     var body: some View{
         Button(action: {
             self.action()
         },label: {
-            Text(self.text)
-                .frame(width: 140, height: 120, alignment: .center)
-//                .font(.system(size: 17.0))
-                .font(.subheadline)
+            label()
         })
         .frame(width: self.width, height: self.height)
         .buttonBorderShape(.capsule)

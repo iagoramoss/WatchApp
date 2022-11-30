@@ -1,111 +1,77 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  Challenge_Apple_Watch Watch App
 //
-//  Created by Dessana Santos on 07/11/22.
+//  Created by Iago Ramos on 29/11/22.
 //
 
 import SwiftUI
 
 struct HomeView: View {
-    
-    @EnvironmentObject var eatingTime: EatingTime
+    @EnvironmentObject var meal: Meal
     @State var showSuggestionView: Bool = false
     
     var body: some View {
-        ZStack{
-            GeometryReader{ geometry in
+        GeometryReader { geometry in
+            ZStack{
                 NavigationStack{
-                    ScrollView {
-                        VStack(alignment: .center){
-                            Image.startEat
-                                .resizable()
-                                .scaledToFit()
-                            // .frame(width: 93, height: 64)
-                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.4)
-                            // .padding(.top, 40)
-                                .padding(.top, 18)
-                            
-                            Text("Concentre-se no agora e aproveite sua refeição.")
-                                .fixedSize(horizontal: false, vertical: true)
-                                .frame(width: geometry.size.width - 8, height: geometry.size.height * 0.26)
-                            // .font(.system(size: geometry.size.width * 0.077))
-                                .font(.footnote)
-                                .lineLimit(nil)
-                                .multilineTextAlignment(.center)
-                                .padding(.top, 8)
-                            
-                            // Botão para as duas Telas
-                            DefaultButtonView(
-                                text: "Iniciar refeição",
-                                width: geometry.size.width * 0.93,
-                                height: 44,
-                                cornerRadius: 22.0,
-                                action: { self.eatingTime.initEating()
-                                    showSuggestionView.toggle()})
-                            .padding(.top, 10)
-                            .edgesIgnoringSafeArea(.bottom)
-                            
-                        }
-                        .toolbar{
-                            ToolbarItem(placement: .cancellationAction){
-                                Text("Appreciate")
-                                    .foregroundColor(.colorDefault)
+                    VStack{
+                        Text("Selecione o tipo de refeição a ser iniciada")
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.colorDefault)
+                            .padding(.bottom, 12)
+                        
+                        MealTypeButton(
+                            width: geometry.size.width,
+                            text: "Pequenas Porções",
+                            action: {
+                                self.meal.type = .short
+                                self.meal.startEating()
+                                
+                                showSuggestionView.toggle()
                             }
+                        )
+                        .padding(.bottom, 8)
+                        
+                        MealTypeButton(
+                            width: geometry.size.width,
+                            text: "Grandes Refeições",
+                            action: {
+                                self.meal.type = .long
+                                self.meal.startEating()
+                                
+                                showSuggestionView.toggle()
+                            }
+                        )
+                    }.toolbar{
+                        ToolbarItem(placement: .cancellationAction){
+                            Text("Appreciate")
+                                .foregroundColor(.colorDefault)
                         }
                     }
-                }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.black)
+                }
                 
-                if showSuggestionView {
-                    SuggestionView(backHomeAction: {showSuggestionView.toggle()})
-                    
+                if(showSuggestionView) {
+                    SuggestionView(
+                        backHomeAction: {
+                            showSuggestionView.toggle()
+                            
+                        }
+                    )
                 }
             }.sheet(isPresented: self.$eatingTime.presentAdvice) {
                 AdviceView()
             }
+        }.sheet(isPresented: self.$meal.presentAdvice) {
+            AdviceView()
         }
     }
 }
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView() .environmentObject(EatingTime())
+        HomeView()
     }
 }
-
-// Comentários
-
-
-// Text("Alimente-se lentamente")
-// .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.04)
-// .font(.system(size: 14.0))
-// .foregroundColor(.accentColor)
-
-
-//            .navigationTitle {
-//                Text("Appreciate")
-//                    .foregroundColor(.colorDefault)
-//                .padding(.trailing, 30)}
-
-
-//Button(action: {
-// self.eatingTime.initEating()
-//showSuggestionView.toggle()
-// }, label: {
-// Image("Food")
-// .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.4)
-
-// }).frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.45)
-// .buttonStyle(PlainButtonStyle())
-
-// Text("Iniciar refeição")
-// .frame(width: geometry.size.width * 0.65, height: geometry.size.height * 0.06)
-//.font(.system(size: 16.0))
-// .fontWeight(.bold)
-// .foregroundColor(.colorDefault)
-// .padding(.top, 16)
-
-
-//.frame(width: 176, height: 39)
-//.frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-//  .frame(width: 176, height: 39)
