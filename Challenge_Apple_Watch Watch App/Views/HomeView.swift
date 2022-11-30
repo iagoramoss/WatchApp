@@ -49,6 +49,14 @@ struct HomeView: View {
                                 .edgesIgnoringSafeArea(.bottom)
                                 
                             }
+                            .focusable()
+                             .digitalCrownRotation($scrollAmount,
+                                from: 0.0,
+                                through: 12.0,
+                                by: 0.1,
+                                sensitivity: .high,
+                                isContinuous: true,
+                                isHapticFeedbackEnabled: true)
                             .toolbar{
                                 ToolbarItem(placement: .cancellationAction){
                                     Text("Appreciate")
@@ -56,7 +64,14 @@ struct HomeView: View {
                                 }
                             }
                         }
-                        
+                        .focusable()
+                           .digitalCrownRotation($scrollAmount,
+                              from: 0.0,
+                              through: 12.0,
+                              by: 0.1,
+                              sensitivity: .high,
+                              isContinuous: true,
+                              isHapticFeedbackEnabled: true)
                         .background(Color.black)
                     }
                 } else {
@@ -93,6 +108,7 @@ struct HomeView: View {
                                 .edgesIgnoringSafeArea(.bottom)
                                 
                             }
+                         
                             .toolbar{
                                 ToolbarItem(placement: .cancellationAction){
                                     Text("Appreciate")
@@ -100,8 +116,16 @@ struct HomeView: View {
                                 }
                             }
                         }
-                        
+                        .focusable()
+                           .digitalCrownRotation($scrollAmount,
+                              from: 0.0,
+                              through: 12.0,
+                              by: 0.1,
+                              sensitivity: .high,
+                              isContinuous: true,
+                              isHapticFeedbackEnabled: true)
                         .background(Color.black)
+                     
                     }
 
                 }
@@ -110,12 +134,14 @@ struct HomeView: View {
                     SuggestionView(backHomeAction: {showSuggestionView.toggle()})
                     
                 }
-            }.sheet(isPresented: self.$eatingTime.presentAdvice) {
+            }
+            .sheet(isPresented: self.$eatingTime.presentAdvice) {
                 AdviceView()
             }
         }
         
     }
+   
 }
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
