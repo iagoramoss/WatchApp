@@ -20,102 +20,36 @@ struct SuggestionView: View {
         let tipTitle = String(describing: tip.rawValue)
         let tipImage = tip.image
         
-        ZStack{
-            NavigationStack {
-                ScrollView {
-                    GeometryReader { geometry in
+        ZStack {
+            GeometryReader { geometry in
+                NavigationStack {
+                    ScrollView {
                         VStack {
                             tipImage
-                                .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14)
+                                .fixedSize(horizontal: true, vertical: true)
+                                .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14, alignment: .center)
                                 .padding(.top, 13)
-                                .padding(.bottom, 11)
                             
-                            // Telas Menores
+                            //height: geometry.size.height * 0.09
+                            Text("Sugestão apreciativa")
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(width: geometry.size.width - 17, alignment: .center)
+                            //.font(.system(size: geometry.size.width * 0.087))
+                                .font(.caption)
+                                .fontWeight(.semibold)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(nil)
+                                .foregroundColor(.colorDefault)
+                                .padding(.top, 5)
                             
-                            if geometry.size.width <= 174{
-                                Text("Sugestão apreciativa")
-                                    .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
-                                    .font(.system(size: 14.0))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.colorDefault)
-                                    .padding(.leading, 8)
-                                
-                                if tipTitle == AppreciateTips.paladar.rawValue{
-                                    Text(AppreciateTips.paladar.rawValue)
-                                        .frame(width: geometry.size.width * 0.92, height: 70, alignment: .leading)
-                                        .font(.system(size: 14.0))
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(nil)
-                                        .edgesIgnoringSafeArea(.leading)
-                                        .padding(.bottom, 6)
-                                        .padding(.leading, 8)
-                                    
-                                }
-                                else if tipTitle == AppreciateTips.tato.rawValue{
-                                    Text(AppreciateTips.tato.rawValue)
-                                        .frame(width: geometry.size.width * 0.92, height: 70, alignment: .leading)
-                                        .font(.system(size: 14.0))
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(nil)
-                                        .edgesIgnoringSafeArea(.leading)
-                                        .padding(.bottom, 6)
-                                        .padding(.leading, 8)
-                                }
-                                else {
-                                    Text(tipTitle)
-                                        .frame(width: geometry.size.width * 0.92, height: 100.5, alignment: .leading)
-                                        .font(.system(size: 14.0))
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(nil)
-                                        .edgesIgnoringSafeArea(.leading)
-                                        .padding(.leading, 8)
-                                    
-                                }
-                            }
-                            
-                            // Telas Maiores
-                            
-                            else {
-                                Text("Sugestão apreciativa")
-                                    .frame(width: geometry.size.width * 0.92, height: geometry.size.height * 0.09, alignment: .leading)
-                                    .font(.system(size: 16.0))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.colorDefault)
-                                    .padding(.leading, 8)
-                                
-                                if tipTitle == AppreciateTips.paladar.rawValue{
-                                    Text(AppreciateTips.paladar.rawValue)
-                                        .frame(width: geometry.size.width * 0.92, height: 70, alignment: .leading)
-                                        .font(.system(size: 14.0))
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(nil)
-                                        .edgesIgnoringSafeArea(.leading)
-                                        .padding(.bottom, 6)
-                                        .padding(.leading, 8)
-                                    
-                                }
-                                else if tipTitle == AppreciateTips.tato.rawValue{
-                                    Text(AppreciateTips.tato.rawValue)
-                                        .frame(width: geometry.size.width * 0.92, height: 70, alignment: .leading)
-                                        .font(.system(size: 14.0))
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(nil)
-                                        .edgesIgnoringSafeArea(.leading)
-                                        .padding(.bottom, 6)
-                                        .padding(.leading, 8)
-                                }
-                                else {
-                                    Text(tipTitle)
-                                        .frame(width: geometry.size.width * 0.92, height: 85, alignment: .leading)
-                                        .font(.system(size: 14.0))
-                                        .multilineTextAlignment(.leading)
-                                        .lineLimit(nil)
-                                        .edgesIgnoringSafeArea(.leading)
-                                        .padding(.bottom, 6)
-                                        .padding(.leading, 8)
-                                    
-                                }
-                            }
+                            Text(tipTitle)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(width: geometry.size.width - 16, alignment: .leading)
+                            //.font(.system(size: geometry.size.width * 0.077))
+                                .font(.footnote)
+                            //.multilineTextAlignment(.leading)
+                                .lineLimit(nil)
+                                .padding(.top, 5)
                             
                             // Botão Continuar
                             DefaultButtonView(
@@ -161,11 +95,11 @@ struct SuggestionView: View {
         }
     }
 }
+
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
         SuggestionView(backHomeAction: {})
         // .environmentObject(EatingTime())
     }
 }
-
-//.padding(.bottom, 6)
+//geometry.size.width * 0.92 - titulo e texto
