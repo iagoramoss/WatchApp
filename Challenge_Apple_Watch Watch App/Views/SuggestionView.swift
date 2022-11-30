@@ -46,7 +46,7 @@ struct SuggestionView: View {
                                 .frame(width: geometry.size.width - 16, alignment: .leading)
                             //.font(.system(size: geometry.size.width * 0.077))
                                 .font(.footnote)
-//                                .multilineTextAlignment(.leading)
+                            //.multilineTextAlignment(.leading)
                                 .lineLimit(nil)
                                 .padding(.top, 5)
                             
@@ -88,8 +88,6 @@ struct SuggestionView: View {
         }
     }
 }
-
-
 
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
