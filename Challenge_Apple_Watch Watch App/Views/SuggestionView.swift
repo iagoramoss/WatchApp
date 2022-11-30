@@ -250,14 +250,7 @@ struct SuggestionView: View {
 //                                        .fontWeight(.semibold)
                                         .foregroundColor(.colorDefault)
                                         .padding(.leading, 8)
-                                        .focusable()
-                                        .digitalCrownRotation($scrollAmount,
-                                                              from: 0.0,
-                                                              through: 12.0,
-                                                              by: 0.1,
-                                                              sensitivity: .high,
-                                                              isContinuous: true,
-                                                              isHapticFeedbackEnabled: true)
+                                        
                                     
                                     
                                     if tipTitle == AppreciateTips.paladar.rawValue{
@@ -269,14 +262,7 @@ struct SuggestionView: View {
                                             .edgesIgnoringSafeArea(.leading)
                                             .padding(.bottom, 6)
                                             .padding(.leading, 8)
-                                            .focusable()
-                                            .digitalCrownRotation($scrollAmount,
-                                                                  from: 0.0,
-                                                                  through: 12.0,
-                                                                  by: 0.1,
-                                                                  sensitivity: .high,
-                                                                  isContinuous: true,
-                                                                  isHapticFeedbackEnabled: true)
+                                            
                                         
                                     }
                                     else if tipTitle == AppreciateTips.tato.rawValue{
@@ -288,14 +274,7 @@ struct SuggestionView: View {
                                             .edgesIgnoringSafeArea(.leading)
                                             .padding(.bottom, 6)
                                             .padding(.leading, 8)
-                                            .focusable()
-                                            .digitalCrownRotation($scrollAmount,
-                                                                  from: 0.0,
-                                                                  through: 12.0,
-                                                                  by: 0.1,
-                                                                  sensitivity: .high,
-                                                                  isContinuous: true,
-                                                                  isHapticFeedbackEnabled: true)
+                                            
                                     }
                                     else {
                                         Text(tipTitle)
@@ -306,14 +285,7 @@ struct SuggestionView: View {
                                             .edgesIgnoringSafeArea(.leading)
                                             .padding(.bottom, 6)
                                             .padding(.leading, 8)
-                                            .focusable()
-                                            .digitalCrownRotation($scrollAmount,
-                                                                  from: 0.0,
-                                                                  through: 12.0,
-                                                                  by: 0.1,
-                                                                  sensitivity: .high,
-                                                                  isContinuous: true,
-                                                                  isHapticFeedbackEnabled: true)
+                                           
                                     }
                                 }
                                 
@@ -346,12 +318,21 @@ struct SuggestionView: View {
                             }
                             
                         }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
+                            .focusable()
+                            .digitalCrownRotation($scrollAmount,
+                                                  from: 0.0,
+                                                  through: 12.0,
+                                                  by: 0.1,
+                                                  sensitivity: .high,
+                                                  isContinuous: true,
+                                                  isHapticFeedbackEnabled: true)
                         
                         
                     }
-                    
+                  
                     
                 }
+                
             }
             if showTransitionView{
                 TransitionView(closeViewAction: {
