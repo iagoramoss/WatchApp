@@ -15,7 +15,9 @@ struct AdviceView: View {
             GeometryReader{ geometry in
                 VStack{
                     Text(self.eatingTime.adviceTitle ?? "")
-                        .font(.system(size: 16, weight: .semibold))
+//                        .font(.system(size: 16, weight: .semibold))
+                        .font(.caption)
+                        .fontWeight(.semibold)
                         .foregroundColor(.colorDefault)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
@@ -24,7 +26,8 @@ struct AdviceView: View {
                         .padding(.bottom, 8)
                     
                     Text(self.eatingTime.adviceText ?? "")
-                        .font(.system(size: 14))
+//                        .font(.system(size: 14))
+                        .font(.footnote)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(width: geometry.size.width - 8)

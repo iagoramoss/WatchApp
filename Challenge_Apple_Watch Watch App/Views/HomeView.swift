@@ -14,126 +14,105 @@ struct HomeView: View {
     @State var scrollAmount = 0.0
     
     var body: some View {
-        GeometryReader{ geometry in
-            
-            ZStack{
+        ZStack{
+            GeometryReader{ geometry in
                 if #available(watchOS 9.0, *) {
                     NavigationStack{
-                        VStack(alignment: .center){
-                            
-                            // Telas Menores
-                            if geometry.size.width <= 161{
+                        ScrollView {
+                            VStack(alignment: .center){
                                 Image.startEat
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.35)
-                                    .padding(.top, 40)
+                                // .frame(width: 93, height: 64)
+                                    .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.4)
+                                // .padding(.top, 40)
+                                    .padding(.top, 18)
+                                
                                 Text("Concentre-se no agora e aproveite sua refeição.")
-                                    .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.26)
-                                    .font(.system(size: 13))
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .frame(width: geometry.size.width - 8, height: geometry.size.height * 0.26)
+                                // .font(.system(size: geometry.size.width * 0.077))
+                                    .font(.footnote)
                                     .lineLimit(nil)
                                     .multilineTextAlignment(.center)
+                                    .padding(.top, 8)
+                                
+                                // Botão para as duas Telas
+                                DefaultButtonView(
+                                    text: "Iniciar refeição",
+                                    width: geometry.size.width * 0.93,
+                                    height: 44,
+                                    cornerRadius: 22.0,
+                                    action: { self.eatingTime.initEating()
+                                        showSuggestionView.toggle()})
+                                .padding(.top, 10)
+                                .edgesIgnoringSafeArea(.bottom)
                                 
                             }
-                            // Telas Maiores
-                            else {
-                                Image.startEat
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 93, height: 64)
-                                    .padding(.top, 40)
-                                Text("Concentre-se no agora e aproveite sua refeição.")
-                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
-                                    .font(.system(size: 14))
-                                    .lineLimit(nil)
-                                    .multilineTextAlignment(.center)
-                            }
-                            
-                            // Botão para as duas Telas
-                            DefaultButtonView(
-                                text: "Iniciar refeição",
-                                width: geometry.size.width * 0.93,
-                                height: 44,
-                                cornerRadius: 22.0,
-                                action: { self.eatingTime.initEating()
-                                    showSuggestionView.toggle()})
-                            .padding(.top, 8)
-                            .edgesIgnoringSafeArea(.bottom)
-                            
-                        }
-                        .toolbar{
-                            ToolbarItem(placement: .cancellationAction){
-                                Text("Appreciate")
-                                    .foregroundColor(.colorDefault)
+                            .toolbar{
+                                ToolbarItem(placement: .cancellationAction){
+                                    Text("Appreciate")
+                                        .foregroundColor(.colorDefault)
+                                }
                             }
                         }
-                    }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                        
                         .background(Color.black)
+                    }
                 } else {
                     // Fallback on earlier versions
                     NavigationView{
-                        VStack(alignment: .center){
-                            
-                            // Telas Menores
-                            if geometry.size.width <= 161{
+                        ScrollView {
+                            VStack(alignment: .center){
                                 Image.startEat
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.35)
-                                    .padding(.top, 40)
+                                // .frame(width: 93, height: 64)
+                                    .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.4)
+                                // .padding(.top, 40)
+                                    .padding(.top, 18)
+                                
                                 Text("Concentre-se no agora e aproveite sua refeição.")
-                                    .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.26)
-                                    .font(.system(size: 13))
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .frame(width: geometry.size.width - 8, height: geometry.size.height * 0.26)
+                                // .font(.system(size: geometry.size.width * 0.077))
+                                    .font(.footnote)
                                     .lineLimit(nil)
                                     .multilineTextAlignment(.center)
+                                    .padding(.top, 8)
+                                
+                                // Botão para as duas Telas
+                                DefaultButtonView(
+                                    text: "Iniciar refeição",
+                                    width: geometry.size.width * 0.93,
+                                    height: 44,
+                                    cornerRadius: 22.0,
+                                    action: { self.eatingTime.initEating()
+                                        showSuggestionView.toggle()})
+                                .padding(.top, 10)
+                                .edgesIgnoringSafeArea(.bottom)
                                 
                             }
-                            // Telas Maiores
-                            else {
-                                Image.startEat
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 93, height: 64)
-                                    .padding(.top, 40)
-                                Text("Concentre-se no agora e aproveite sua refeição.")
-                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.26)
-                                    .font(.system(size: 14))
-                                    .lineLimit(nil)
-                                    .multilineTextAlignment(.center)
-                            }
-                            
-                            // Botão para as duas Telas
-                            DefaultButtonView(
-                                text: "Iniciar refeição",
-                                width: geometry.size.width * 0.93,
-                                height: 44,
-                                cornerRadius: 22.0,
-                                action: { self.eatingTime.initEating()
-                                    showSuggestionView.toggle()})
-                            .padding(.top, 8)
-                            .edgesIgnoringSafeArea(.bottom)
-                            
-                        }
-                       
-                        .toolbar{
-                            ToolbarItem(placement: .cancellationAction){
-                                Text("Appreciate")
-                                    .foregroundColor(.colorDefault)
+                            .toolbar{
+                                ToolbarItem(placement: .cancellationAction){
+                                    Text("Appreciate")
+                                        .foregroundColor(.colorDefault)
+                                }
                             }
                         }
-                    }
-                   
+                        
                         .background(Color.black)
+                    }
+
                 }
                 
                 if showSuggestionView {
                     SuggestionView(backHomeAction: {showSuggestionView.toggle()})
                     
                 }
+            }.sheet(isPresented: self.$eatingTime.presentAdvice) {
+                AdviceView()
             }
-           
-        }.sheet(isPresented: self.$eatingTime.presentAdvice) {
-            AdviceView()
         }
         
     }
@@ -177,6 +156,6 @@ struct HomeView_Previews: PreviewProvider {
 // .padding(.top, 16)
 
 
-//                            .frame(width: 176, height: 39)
+//.frame(width: 176, height: 39)
 //.frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-//                            .frame(width: 176, height: 39)
+//  .frame(width: 176, height: 39)

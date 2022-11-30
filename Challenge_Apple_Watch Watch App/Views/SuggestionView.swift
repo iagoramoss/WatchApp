@@ -180,7 +180,14 @@ struct SuggestionView: View {
                             }
                             
                         }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
-                        
+//                            .focusable()
+//                            .digitalCrownRotation($scrollAmount,
+//                                                  from: 0.0,
+//                                                  through: 12.0,
+//                                                  by: 0.1,
+//                                                  sensitivity: .high,
+//                                                  isContinuous: true,
+//                                                  isHapticFeedbackEnabled: true)
                         
                     }
                     
@@ -343,11 +350,13 @@ struct SuggestionView: View {
         }
     }
 }
+
+
+
 struct SuggestionView_Previews: PreviewProvider {
     static var previews: some View {
         SuggestionView(backHomeAction: {})
         // .environmentObject(EatingTime())
     }
 }
-
-//.padding(.bottom, 6)
+//geometry.size.width * 0.92 - titulo e texto
