@@ -21,15 +21,15 @@ struct HomeView: View {
                             Image.startEat
                                 .resizable()
                                 .scaledToFit()
-                            //                          .frame(width: 93, height: 64)
+                            // .frame(width: 93, height: 64)
                                 .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.4)
-                            //                          .padding(.top, 40)
+                            // .padding(.top, 40)
                                 .padding(.top, 18)
                             
                             Text("Concentre-se no agora e aproveite sua refeição.")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(width: geometry.size.width - 8, height: geometry.size.height * 0.26)
-                            //                            .font(.system(size: geometry.size.width * 0.077))
+                            // .font(.system(size: geometry.size.width * 0.077))
                                 .font(.footnote)
                                 .lineLimit(nil)
                                 .multilineTextAlignment(.center)

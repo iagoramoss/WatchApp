@@ -39,16 +39,16 @@ struct SuggestionView: View {
                                 .multilineTextAlignment(.center)
                                 .lineLimit(nil)
                                 .foregroundColor(.colorDefault)
-                            .padding(.top, 5)
+                                .padding(.top, 5)
                             
                             Text(tipTitle)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(width: geometry.size.width - 16, alignment: .leading)
                             //.font(.system(size: geometry.size.width * 0.077))
                                 .font(.footnote)
-                                .multilineTextAlignment(.leading)
+//                                .multilineTextAlignment(.leading)
                                 .lineLimit(nil)
-                            .padding(.top, 5)
+                                .padding(.top, 5)
                             
                             // Botão Continuar
                             DefaultButtonView(
@@ -67,8 +67,6 @@ struct SuggestionView: View {
                             ToolbarItem(placement: .cancellationAction){
                                 Button(action: {
                                     backHomeAction()
-                                    //print(geometry.size.width)
-                                    //print(geometry.size.height)
                                 }, label: {
                                     Image(systemName: "chevron.backward.circle.fill")
                                         .font(.system(size: geometry.size.width * 0.093))
@@ -99,6 +97,4 @@ struct SuggestionView_Previews: PreviewProvider {
         // .environmentObject(EatingTime())
     }
 }
-
-//.padding(.bottom, 6)
 //geometry.size.width * 0.92 - titulo e texto
