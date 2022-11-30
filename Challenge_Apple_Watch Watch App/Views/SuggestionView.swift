@@ -29,26 +29,26 @@ struct SuggestionView: View {
                                 .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14, alignment: .center)
                                 .padding(.top, 13)
                             
-                            //                          height: geometry.size.height * 0.09
+                            //height: geometry.size.height * 0.09
                             Text("Sugestão apreciativa")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(width: geometry.size.width - 17, alignment: .center)
-                            //                              .font(.system(size: geometry.size.width * 0.087))
+                            //.font(.system(size: geometry.size.width * 0.087))
                                 .font(.caption)
                                 .fontWeight(.semibold)
                                 .multilineTextAlignment(.center)
                                 .lineLimit(nil)
                                 .foregroundColor(.colorDefault)
-                            //                              .padding(.top, 7)
+                            .padding(.top, 5)
                             
                             Text(tipTitle)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(width: geometry.size.width - 16, alignment: .leading)
-                            //                              .font(.system(size: geometry.size.width * 0.077))
+                            //.font(.system(size: geometry.size.width * 0.077))
                                 .font(.footnote)
                                 .multilineTextAlignment(.leading)
                                 .lineLimit(nil)
-                            //                              .padding(.top, 8)
+                            .padding(.top, 5)
                             
                             // Botão Continuar
                             DefaultButtonView(
@@ -67,8 +67,8 @@ struct SuggestionView: View {
                             ToolbarItem(placement: .cancellationAction){
                                 Button(action: {
                                     backHomeAction()
-                                    //                                        print(geometry.size.width)
-                                    //                                        print(geometry.size.height)
+                                    //print(geometry.size.width)
+                                    //print(geometry.size.height)
                                 }, label: {
                                     Image(systemName: "chevron.backward.circle.fill")
                                         .font(.system(size: geometry.size.width * 0.093))

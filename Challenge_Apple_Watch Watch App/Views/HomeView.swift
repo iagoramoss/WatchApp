@@ -16,40 +16,42 @@ struct HomeView: View {
         ZStack{
             GeometryReader{ geometry in
                 NavigationStack{
-                    VStack(alignment: .center){
-                        Image.startEat
-                            .resizable()
-                            .scaledToFit()
-//                            .frame(width: 93, height: 64)
-                            .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.4)
-//                            .padding(.top, 40)
-                            .padding(.top, 30)
-                        
-                        Text("Concentre-se no agora e aproveite sua refeição.")
-                            .fixedSize(horizontal: false, vertical: true)
-                            .frame(width: geometry.size.width - 8, height: geometry.size.height * 0.26)
-//                            .font(.system(size: geometry.size.width * 0.077))
-                            .font(.footnote)
-                            .lineLimit(nil)
-                            .multilineTextAlignment(.center)
-                            .padding(.top, 5)
-                        
-                        // Botão para as duas Telas
-                        DefaultButtonView(
-                            text: "Iniciar refeição",
-                            width: geometry.size.width * 0.93,
-                            height: 44,
-                            cornerRadius: 22.0,
-                            action: { self.eatingTime.initEating()
-                                showSuggestionView.toggle()})
-                        .padding(.top, 5)
-                        .edgesIgnoringSafeArea(.bottom)
-                        
-                    }
-                    .toolbar{
-                        ToolbarItem(placement: .cancellationAction){
-                            Text("Appreciate")
-                                .foregroundColor(.colorDefault)
+                    ScrollView {
+                        VStack(alignment: .center){
+                            Image.startEat
+                                .resizable()
+                                .scaledToFit()
+                            //                          .frame(width: 93, height: 64)
+                                .frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.4)
+                            //                          .padding(.top, 40)
+                                .padding(.top, 18)
+                            
+                            Text("Concentre-se no agora e aproveite sua refeição.")
+                                .fixedSize(horizontal: false, vertical: true)
+                                .frame(width: geometry.size.width - 8, height: geometry.size.height * 0.26)
+                            //                            .font(.system(size: geometry.size.width * 0.077))
+                                .font(.footnote)
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
+                                .padding(.top, 8)
+                            
+                            // Botão para as duas Telas
+                            DefaultButtonView(
+                                text: "Iniciar refeição",
+                                width: geometry.size.width * 0.93,
+                                height: 44,
+                                cornerRadius: 22.0,
+                                action: { self.eatingTime.initEating()
+                                    showSuggestionView.toggle()})
+                            .padding(.top, 10)
+                            .edgesIgnoringSafeArea(.bottom)
+                            
+                        }
+                        .toolbar{
+                            ToolbarItem(placement: .cancellationAction){
+                                Text("Appreciate")
+                                    .foregroundColor(.colorDefault)
+                            }
                         }
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -104,6 +106,6 @@ struct HomeView_Previews: PreviewProvider {
 // .padding(.top, 16)
 
 
-//                            .frame(width: 176, height: 39)
+//.frame(width: 176, height: 39)
 //.frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.3)
-//                            .frame(width: 176, height: 39)
+//  .frame(width: 176, height: 39)
