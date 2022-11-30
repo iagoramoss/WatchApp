@@ -16,13 +16,19 @@ class Meal: ObservableObject{
     var adviceText: String?
     
     @Published var presentAdvice: Bool = false
+    @Published var duration: TimeInterval?
     
     func startEating(){
         self.eatingTime.startEating()
     }
     
+    func getDuration(){
+        self.eatingTime.getEatingMinutes()
+        self.duration = self.eatingTime.duration
+    }
+    
     func stopEating(){
-        self.eatingTime.stopEating()
+        self.eatingTime.getEatingMinutes()
         
         if let mealType = self.type, let duration = self.eatingTime.duration{
             let eatingAdvice = EatingAdvice(
