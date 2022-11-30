@@ -1,7 +1,13 @@
 {
   "images" : [
     {
-      "filename" : "LogoAppreciate.ofc.png",
+      "filename" : "LogoAppreciate1.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "LogoAppreciate.png",
       "idiom" : "universal",
       "platform" : "watchos",
       "size" : "1024x1024"
