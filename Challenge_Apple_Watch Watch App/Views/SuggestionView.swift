@@ -119,13 +119,15 @@ struct SuggestionView: View {
                             
                             // Botão Continuar
                             DefaultButtonView(
-                                text: "Continuar",
                                 width: geometry.size.width * 0.93,
                                 height: 44,
                                 cornerRadius: 22.0,
                                 action: {
                                     showTransitionView.toggle()
                                     WKInterfaceDevice.current().play(.click)
+                                },
+                                label: {
+                                    Text("Continuar")
                                 }
                             )
                             

@@ -10,7 +10,7 @@ import SwiftUI
 struct StopEatingView: View {
     
     var nextViewAction: () -> ()
-    @EnvironmentObject var eatingTime: EatingTime
+    @EnvironmentObject var meal: Meal
     
     var body: some View {
         GeometryReader{ geometry in
@@ -41,12 +41,18 @@ struct StopEatingView: View {
                         .font(.system(size: 14))
                         .padding(.top, 3)
                     
-                    DefaultButtonView(text: "Finalizar refeição",
-                                      width: geometry.size.width,
-                                      height: 44,
-                                      cornerRadius: 22,
-                                      action: {self.eatingTime.stopEating()
-                        nextViewAction()})
+                    DefaultButtonView(
+                        width: geometry.size.width,
+                        height: 44,
+                        cornerRadius: 22,
+                        action: {
+                            self.meal.stopEating()
+                            nextViewAction()
+                            
+                        }, label: {
+                            Text("Finalizar refeição")
+                        }
+                    )
                     .padding(.top, 10)
                     
                 }.toolbar{
