@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SuggestionView: View {
+    @EnvironmentObject var mealDAO: MealDAO
     
     @State var showTransitionView: Bool = false
     @State var scrollAmount = 0.0
@@ -15,7 +16,6 @@ struct SuggestionView: View {
     var backHomeAction: () -> ()
     
     var body: some View {
-        
         let tip = AppreciateTips.allCases.randomElement()!
         let tipTitle = String(describing: tip.rawValue)
         let tipImage = tip.image
@@ -92,6 +92,8 @@ struct SuggestionView: View {
                     backHomeAction()
                 })
             }
+        }.onAppear(){
+            self.mealDAO.stopAdviceUpdates()
         }
     }
 }

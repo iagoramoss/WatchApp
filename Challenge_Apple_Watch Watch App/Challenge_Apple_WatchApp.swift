@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-import Combine
 
 @main
 struct Challenge_Apple_Watch_Watch_AppApp: App {
-    @ObservedObject var meal: Meal = Meal()
+    @ObservedObject var mealDAO: MealDAO = MealDAO()
     
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environmentObject(self.meal)
+                .environmentObject(self.mealDAO)
         }
     }
 }

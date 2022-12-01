@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct StopEatingView: View {
-    
     var nextViewAction: () -> ()
-    @EnvironmentObject var meal: Meal
+    @EnvironmentObject var mealDAO: MealDAO
     
     var body: some View {
         GeometryReader{ geometry in
@@ -20,24 +19,28 @@ struct StopEatingView: View {
                         Image.endEat
                             .resizable()
                             .scaledToFit()
-                        //.frame(width: 72, height: 92)
-                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
+                            .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.21)
                             .padding(.top, 15)
                         
-                        Text("Você já está saciado?")
+                        Text(self.mealDAO.advice?.rawValue ?? Advice.tooFast.rawValue)
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(width: geometry.size.width, height: geometry.size.height * 0.09)
-                        //.font(.system(size: 14))
                             .font(.footnote)
-                            .padding(.top, 8)
+                            .padding(.top, 28)
                         
-//                        DefaultButtonView(text:"Finalizar refeição",
-//                                          width: geometry.size.width,
-//                                          height: 44,
-//                                          cornerRadius: 22,
-//                                          action: {self.eatingTime.stopEating()
-//                            nextViewAction()})
-//                        .padding(.top, 7)
+                        DefaultButtonView(
+                            width: geometry.size.width,
+                            height: 44,
+                            cornerRadius: 22,
+                            action: {
+                                self.mealDAO.stopAdviceUpdates()
+                                nextViewAction()
+                            },
+                            label: {
+                                Text("Finalizar refeição")
+                            }
+                        )
+                        .padding(.top, 28)
                         
                     }.toolbar{
                         ToolbarItem(placement: .cancellationAction){
@@ -47,6 +50,8 @@ struct StopEatingView: View {
                     }
                 }
             }
+        }.onAppear(){
+            self.mealDAO.startAdviceUpdates()
         }
     }
 }
@@ -54,22 +59,6 @@ struct StopEatingView: View {
 struct StopEatingView_Previews: PreviewProvider {
     static var previews: some View {
         StopEatingView(nextViewAction: {})
+            .environmentObject(MealDAO())
     }
 }
-
-//                    Button(action: {
-//                    self.eatingTime.stopEating()
-//                        nextViewAction()
-//                    },
-//                    label: {
-
-//                    }).frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)
-
-
-//                    Text("Finalizar refeição")
-//                        .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.06)
-//                        .fontWeight(.semibold)
-//                        .padding(.top, 16)
-//                        .foregroundColor(.colorDefault)
-
-//                            .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.4)

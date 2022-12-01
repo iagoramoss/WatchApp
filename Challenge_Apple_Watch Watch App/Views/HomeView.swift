@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var meal: Meal
+    @EnvironmentObject var mealDAO: MealDAO
     @State var showSuggestionView: Bool = false
     
     var body: some View {
@@ -20,15 +20,18 @@ struct HomeView: View {
                             .font(.caption)
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
                             .foregroundColor(.colorDefault)
+                            .padding(.top, 12)
                             .padding(.bottom, 12)
                         
                         MealTypeButton(
                             width: geometry.size.width,
+                            height: geometry.size.height,
                             text: "Pequenas Porções",
                             action: {
-                                self.meal.type = .short
-                                self.meal.startEating()
+                                self.mealDAO.meal.type = .short
+                                self.mealDAO.startEating()
                                 
                                 showSuggestionView.toggle()
                             }
@@ -37,10 +40,11 @@ struct HomeView: View {
                         
                         MealTypeButton(
                             width: geometry.size.width,
+                            height: geometry.size.height,
                             text: "Grandes Refeições",
                             action: {
-                                self.meal.type = .long
-                                self.meal.startEating()
+                                self.mealDAO.meal.type = .long
+                                self.mealDAO.startEating()
                                 
                                 showSuggestionView.toggle()
                             }
@@ -74,5 +78,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(MealDAO())
     }
 }
