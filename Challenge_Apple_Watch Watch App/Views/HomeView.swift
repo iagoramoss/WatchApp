@@ -69,9 +69,10 @@ struct HomeView: View {
 //            .sheet(isPresented: self.$eatingTime.presentAdvice) {
 //                AdviceView()
 //            }
-        }.sheet(isPresented: self.$meal.presentAdvice) {
-            AdviceView()
         }
+//        .sheet(isPresented: self.$meal.presentAdvice) {
+//            AdviceView()
+//        }
     }
 }
 
