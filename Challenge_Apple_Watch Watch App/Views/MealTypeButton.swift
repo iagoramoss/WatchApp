@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MealTypeButton: View {
     let width: CGFloat
+    let height: CGFloat
     let text: String
     let action: () -> Void
     
@@ -23,7 +24,7 @@ struct MealTypeButton: View {
             label: {
                 HStack{
                     Circle()
-                        .frame(width: 24, height: 24)
+                        .frame(width: width * (24 / width), height: height * (24 / height))
                     
                     Text(text)
                         .font(.caption2)

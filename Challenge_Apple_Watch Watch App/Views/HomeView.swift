@@ -20,11 +20,14 @@ struct HomeView: View {
                             .font(.caption)
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
+                            .fixedSize(horizontal: false, vertical: true)
                             .foregroundColor(.colorDefault)
+                            .padding(.top, 12)
                             .padding(.bottom, 12)
                         
                         MealTypeButton(
                             width: geometry.size.width,
+                            height: geometry.size.height,
                             text: "Pequenas Porções",
                             action: {
                                 self.mealDAO.meal.type = .short
@@ -37,6 +40,7 @@ struct HomeView: View {
                         
                         MealTypeButton(
                             width: geometry.size.width,
+                            height: geometry.size.height,
                             text: "Grandes Refeições",
                             action: {
                                 self.mealDAO.meal.type = .long
