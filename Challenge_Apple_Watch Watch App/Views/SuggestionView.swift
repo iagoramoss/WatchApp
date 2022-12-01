@@ -30,11 +30,9 @@ struct SuggestionView: View {
                                 .frame(width: geometry.size.width * 0.22, height: geometry.size.height * 0.14, alignment: .center)
                                 .padding(.top, 13)
                             
-                            //height: geometry.size.height * 0.09
                             Text("Sugestão apreciativa")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(width: geometry.size.width - 17, alignment: .center)
-                            //.font(.system(size: geometry.size.width * 0.087))
                                 .font(.caption)
                                 .fontWeight(.semibold)
                                 .multilineTextAlignment(.center)
@@ -81,10 +79,10 @@ struct SuggestionView: View {
                             
                         }
                         
-                    }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
-                    
-                    
-                } .digitalCrownRotation($scrollAmount, from: 1, through: 5, by: 0.1, sensitivity: .low, isContinuous: true, isHapticFeedbackEnabled: true)
+                    }
+  
+                }.frame(height: WKInterfaceDevice.current().screenBounds.size.height)
+//                .digitalCrownRotation($scrollAmount, from: 1, through: 5, by: 0.1, sensitivity: .low, isContinuous: true, isHapticFeedbackEnabled: true)
             
 
             }

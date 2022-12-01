@@ -31,14 +31,13 @@ struct StopEatingView: View {
                             .font(.footnote)
                             .padding(.top, 8)
                         
-                        DefaultButtonView(text: "Finalizar refeição",
-                                          width: geometry.size.width,
-                                          height: 44,
-                                          // height: 50,
-                                          cornerRadius: 22,
-                                          action: {self.eatingTime.stopEating()
-                            nextViewAction()})
-                        .padding(.top, 7)
+//                        DefaultButtonView(text:"Finalizar refeição",
+//                                          width: geometry.size.width,
+//                                          height: 44,
+//                                          cornerRadius: 22,
+//                                          action: {self.eatingTime.stopEating()
+//                            nextViewAction()})
+//                        .padding(.top, 7)
                         
                     }.toolbar{
                         ToolbarItem(placement: .cancellationAction){
