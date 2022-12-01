@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		67366970292825FA002F715E /* AppreciateTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736696F292825FA002F715E /* AppreciateTips.swift */; };
 		6737C1D22937D819005F76DC /* MealTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6737C1D12937D819005F76DC /* MealTypeButton.swift */; };
+		6737C1D42938155F005F76DC /* Advice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6737C1D32938155F005F76DC /* Advice.swift */; };
+		6737C1D729384C9A005F76DC /* MealDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6737C1D629384C9A005F76DC /* MealDAO.swift */; };
 		6765BCE729281F14003E3442 /* DefaultButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765BCE629281F14003E3442 /* DefaultButtonView.swift */; };
 		6766E840292D62B90008949A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B47AB829197D0B0095B1FA /* Assets.xcassets */; };
 		6766E84229367E0D0008949A /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766E84129367E0D0008949A /* Meal.swift */; };
@@ -17,7 +19,6 @@
 		6766E84829369D530008949A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6766E84729369D530008949A /* HomeView.swift */; };
 		67704E412926B49100CC0FB5 /* EatingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E402926B49100CC0FB5 /* EatingTime.swift */; };
 		67704E432926BE0900CC0FB5 /* TimeInterval+Minutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E422926BE0900CC0FB5 /* TimeInterval+Minutes.swift */; };
-		67704E4A292804A000CC0FB5 /* AdviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67704E49292804A000CC0FB5 /* AdviceView.swift */; };
 		868629F7291EBD1100EC7B2C /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868629F6291EBD1100EC7B2C /* ReminderView.swift */; };
 		86B47AB029197D0A0095B1FA /* Appreciate.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 86B47AAF29197D0A0095B1FA /* Appreciate.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B47AB429197D0A0095B1FA /* Challenge_Apple_WatchApp.swift */; };
@@ -59,6 +60,8 @@
 /* Begin PBXFileReference section */
 		6736696F292825FA002F715E /* AppreciateTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppreciateTips.swift; sourceTree = "<group>"; };
 		6737C1D12937D819005F76DC /* MealTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTypeButton.swift; sourceTree = "<group>"; };
+		6737C1D32938155F005F76DC /* Advice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advice.swift; sourceTree = "<group>"; };
+		6737C1D629384C9A005F76DC /* MealDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDAO.swift; sourceTree = "<group>"; };
 		6765BCE629281F14003E3442 /* DefaultButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonView.swift; sourceTree = "<group>"; };
 		6766E84129367E0D0008949A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		6766E843293685D00008949A /* MealType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealType.swift; sourceTree = "<group>"; };
@@ -66,7 +69,6 @@
 		6766E84729369D530008949A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		67704E402926B49100CC0FB5 /* EatingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatingTime.swift; sourceTree = "<group>"; };
 		67704E422926BE0900CC0FB5 /* TimeInterval+Minutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Minutes.swift"; sourceTree = "<group>"; };
-		67704E49292804A000CC0FB5 /* AdviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceView.swift; sourceTree = "<group>"; };
 		868629F6291EBD1100EC7B2C /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		86B47AA929197D0A0095B1FA /* Challenge_Apple_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge_Apple_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B47AAF29197D0A0095B1FA /* Appreciate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appreciate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,14 +102,31 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		6737C1D529384C8C005F76DC /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				6737C1D629384C9A005F76DC /* MealDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		6737C1D829385134005F76DC /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				6766E84129367E0D0008949A /* Meal.swift */,
+				6766E843293685D00008949A /* MealType.swift */,
+				67704E402926B49100CC0FB5 /* EatingTime.swift */,
+				6737C1D32938155F005F76DC /* Advice.swift */,
+				6766E845293687C70008949A /* EatingAdvice.swift */,
+			);
+			path = Meal;
+			sourceTree = "<group>";
+		};
 		67704E48292803F900CC0FB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				67704E402926B49100CC0FB5 /* EatingTime.swift */,
+				6737C1D829385134005F76DC /* Meal */,
 				6736696F292825FA002F715E /* AppreciateTips.swift */,
-				6766E84129367E0D0008949A /* Meal.swift */,
-				6766E843293685D00008949A /* MealType.swift */,
-				6766E845293687C70008949A /* EatingAdvice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +152,7 @@
 		86B47AB329197D0A0095B1FA /* Challenge_Apple_Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				6737C1D529384C8C005F76DC /* DAO */,
 				67704E48292803F900CC0FB5 /* Models */,
 				9FE5DA0229266B7B0008CB21 /* Views */,
 				9F7B143229256790008EAFA8 /* Extensions */,
@@ -173,15 +193,14 @@
 		9FE5DA0229266B7B0008CB21 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6766E84729369D530008949A /* HomeView.swift */,
 				9F2FF0F229218B7C00D87E45 /* SuggestionView.swift */,
 				9FF543322925737F00EE7A0B /* TransitionView.swift */,
 				86B47AB629197D0A0095B1FA /* AnimationView.swift */,
 				9F2B6438291ED1CC008BA2DB /* StopEatingView.swift */,
 				868629F6291EBD1100EC7B2C /* ReminderView.swift */,
 				9F11D200292741EB00AD752E /* TesteView.swift */,
-				67704E49292804A000CC0FB5 /* AdviceView.swift */,
 				86CEC1C1292BEE8A004F0ACF /* Components */,
-				6766E84729369D530008949A /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,9 +308,10 @@
 				86B47AB729197D0A0095B1FA /* AnimationView.swift in Sources */,
 				9F2FF0F329218B7C00D87E45 /* SuggestionView.swift in Sources */,
 				67704E412926B49100CC0FB5 /* EatingTime.swift in Sources */,
-				67704E4A292804A000CC0FB5 /* AdviceView.swift in Sources */,
 				86B47AB529197D0A0095B1FA /* Challenge_Apple_WatchApp.swift in Sources */,
 				6766E84829369D530008949A /* HomeView.swift in Sources */,
+				6737C1D42938155F005F76DC /* Advice.swift in Sources */,
+				6737C1D729384C9A005F76DC /* MealDAO.swift in Sources */,
 				868629F7291EBD1100EC7B2C /* ReminderView.swift in Sources */,
 				6737C1D22937D819005F76DC /* MealTypeButton.swift in Sources */,
 				6766E84229367E0D0008949A /* Meal.swift in Sources */,

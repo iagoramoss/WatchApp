@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var meal: Meal
+    @EnvironmentObject var mealDAO: MealDAO
     @State var showSuggestionView: Bool = false
     
     var body: some View {
@@ -27,8 +27,8 @@ struct HomeView: View {
                             width: geometry.size.width,
                             text: "Pequenas Porções",
                             action: {
-                                self.meal.type = .short
-                                self.meal.startEating()
+                                self.mealDAO.meal.type = .short
+                                self.mealDAO.startEating()
                                 
                                 showSuggestionView.toggle()
                             }
@@ -39,8 +39,8 @@ struct HomeView: View {
                             width: geometry.size.width,
                             text: "Grandes Refeições",
                             action: {
-                                self.meal.type = .long
-                                self.meal.startEating()
+                                self.mealDAO.meal.type = .long
+                                self.mealDAO.startEating()
                                 
                                 showSuggestionView.toggle()
                             }
@@ -61,11 +61,7 @@ struct HomeView: View {
                         }
                     )
                 }
-            }.sheet(isPresented: self.$meal.presentAdvice) {
-                AdviceView()
             }
-        }.sheet(isPresented: self.$meal.presentAdvice) {
-            AdviceView()
         }
     }
 }
@@ -73,5 +69,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(MealDAO())
     }
 }
