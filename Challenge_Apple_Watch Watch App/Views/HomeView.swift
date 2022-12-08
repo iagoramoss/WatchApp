@@ -29,6 +29,7 @@ struct HomeView: View {
                             width: geometry.size.width,
                             height: geometry.size.height,
                             text: "Pequenas Porções",
+                            image: "pequenas-porcoes",
                             action: {
                                 self.mealDAO.meal.type = .short
                                 self.mealDAO.startEating()
@@ -42,6 +43,7 @@ struct HomeView: View {
                             width: geometry.size.width,
                             height: geometry.size.height,
                             text: "Grandes Refeições",
+                            image: "grandes-refeicoes",
                             action: {
                                 self.mealDAO.meal.type = .long
                                 self.mealDAO.startEating()
@@ -66,13 +68,7 @@ struct HomeView: View {
                     )
                 }
             }
-//            .sheet(isPresented: self.$eatingTime.presentAdvice) {
-//                AdviceView()
-//            }
         }
-//        .sheet(isPresented: self.$meal.presentAdvice) {
-//            AdviceView()
-//        }
     }
 }
 

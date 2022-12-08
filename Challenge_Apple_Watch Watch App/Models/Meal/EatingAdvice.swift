@@ -17,7 +17,7 @@ class EatingAdvice{
     }
     
     func getAdvice() -> Advice{
-        let minimumDuration = mealType == .short ? 10 : 20
+        let minimumDuration = mealType == .short ? 1 : 2
         return eatingDuration.minutes < minimumDuration ? .tooFast : .ideal
     }
 }

@@ -11,11 +11,12 @@ struct MealTypeButton: View {
     let width: CGFloat
     let height: CGFloat
     let text: String
+    let image: String
     let action: () -> Void
     
     var body: some View {
         DefaultButtonView(
-            width: width - 10,
+            width: width,
             height: 45,
             cornerRadius: 22,
             action: {
@@ -23,13 +24,11 @@ struct MealTypeButton: View {
             },
             label: {
                 HStack{
-                    Circle()
-                        .frame(width: width * (24 / width), height: height * (24 / height))
+                    Image(image)
                     
                     Text(text)
                         .font(.caption2)
-                        .fixedSize(horizontal: false, vertical: true)
-//                        .padding(.leading, 8)
+                        .fixedSize(horizontal: true, vertical: true)
                 }
             }
         )
